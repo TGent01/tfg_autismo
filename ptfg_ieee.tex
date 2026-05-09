@@ -1,0 +1,379 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[graphicx]{realboxes}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float} 
+\usepackage{xurl} 
+\usepackage[margin=3.5cm]{geometry}
+\hyphenation{Re-fe-ren-cias}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+%\usepackage{color}              % For creating coloured text and background
+\usepackage[hidelinks]{hyperref}            % For creating hyperlinks in cross references
+\columnsep 0.8 cm
+\pagestyle{plain}
+\newtheorem{teorema}{Teorema}
+\fancyfoot{}
+
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\refname}{Referencias bibliográficas}
+
+\begin{titlepage}
+
+\vspace*{-3cm}
+
+%\thispagestyle{empty}
+
+{\bf
+\begin{center}
+\large
+\vspace*{-1 cm}\Large \textsc{Universidad Nacional del Este} \\
+\Large \textsc{Facultad Politécnica} \\
+\vspace*{0.5 cm}\hrule
+\vspace*{0.5 cm}
+\vspace*{0 cm}\Large Anteproyecto de  Trabajo Final de Grado\\
+\vspace*{0.5 cm}\large Carrera $<$Nombre de la Carrera$>$\\
+\vspace*{0 cm}\large Cátedra $<$Nombre de la Cátedra$>$\\
+\end{center}
+}
+
+\vspace{3 cm}
+{
+\noindent
+\begin{center}
+\huge \bf $<$Título del Anteproyecto de  Trabajo Final de Grado$>$
+\end{center}
+}
+
+\vspace{0.5 cm}
+
+{ 
+Por: \textbf{\Large $<$Nombre del graduando 1$^1>$}
+
+\hspace{1 cm} y \textbf{\Large $<$Nombre del graduando 2$^2>$}
+
+\vspace*{.5 cm}
+Profesor Orientador: \textbf{\large $<$Nombre del Profesor Orientador$^3>$}
+}%\\[6mm]
+\vspace*{0.5 cm}\\
+
+Profesor de la Cátedra: \textbf{\large $<$Nombre del Profesor de la Cátedra$>$}
+
+\vspace{3.0cm}
+
+\begin{minipage}{0.9\textwidth}
+\begin{flushleft}
+\begin{footnotesize}
+\begin{scriptsize}$^{1}$\end{scriptsize}Tel: ,\\
+correo electrónico:  \\
+\vspace*{.5cm}
+\begin{scriptsize}$^{2}$\end{scriptsize}Tel: ,\\
+ correo electrónico:  \\
+\vspace*{.5cm}
+\begin{scriptsize}$^{3}$\end{scriptsize}Tel: ,\\
+ correo electrónico:  \\
+ \end{footnotesize}
+\end{flushleft}
+\end{minipage}
+
+\vspace{2.0cm}
+
+\begin{center}
+{\large {\bf Ciudad del Este, Alto Paraná - Paraguay}\\[6mm]
+\today}\\
+\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+
+\vspace{1cm}
+
+\title{Título del Anteproyecto de  Trabajo Final de Grado (PTFG)}
+\vspace{1cm}
+\date{}
+\maketitle
+
+\thispagestyle{empty}
+\section{Definición del problema}
+Introducción que presenta el problema abordado y su definición. Se acostumbra formular interrogantes o preguntas de investigación que señalan la orientación del tratamiento y las estrategias de investigación; luego, de cada pregunta debe surgir al menos un objetivo específico.
+
+Al enunciar formalmente el problema de investigación se debe tener cuidado para evitar incurrir en la confusión entre el problema de conocimiento y el problema real: generalmente el problema de investigación solo resuelve el problema de conocimiento, pues la solución del problema real demanda la implementación real de la solución del problema de conocimiento, lo cual suele encontrarse fuera del alcance del investigador. A lo sumo, en casos de problemas de aplicación de conocimiento a desarrollo tecnológico, al investigador le compete desarrollar prototipo del producto propuesto, sea este tangible (ej. robot) o intangible (ej. aplicación informática). Esta sección debe concluir enunciando concreta y explícitamente el problema de investigación, así:
+
+Definición del problema: \textit{Aquí se escribe en letras cursivas el enunciado del problema de investigación}.
+
+\section{Delimitación del trabajo.}
+El conocimiento científico es por naturaleza perfectible, incompleto y abierto: siempre es posible ampliarlo y profundizarlo. Por lo tanto, se deben poner límites al trabajo proyectado, debido a limitaciones de recursos, espacio, tiempo y formación científica del investigador.
+
+\section{Objetivos}
+Los objetivos expresan lo que se quiere lograr para responder satisfactoriamente las interrogantes surgidas de la formulación del problema. Se dividen en dos tipos: objetivo general y objetivos específicos. Resulta obvio que el discurso del PTFG debe ser genéricamente en tiempo futuro, teniendo en cuenta que los objetivos aún están por lograrse; y genéricamente se deben evitar expresiones en tiempo pasado.
+
+\subsection{Objetivo general}
+El objetivo general, como propósito de la investigación, se inspira en la definición formal del problema de investigación y engendra el título del trabajo, tan es así que este suele obtener a partir del objetivo principal.
+ 
+\subsection{Objetivos específicos}
+Son cada parte de que se compone todo lo que el objetivo general demanda realizar, ajustado a la delimitación del trabajo. Ningún objetivo específico debe expresar lo mismo que el objetivo general, de ser así, lo eclipsaría; sino que debe expresar un logro parcial deseado, dentro del gran logro que se busca con el objetivo general. Los objetivos específicos deben ser mutuamente excluyentes, de complejidad parecida, deben referirse a procesos (ej. obtener cierto algoritmo) y evitar referirse a actos (ej. entregar cierto informe) y su granularidad debe ser la que posibilite al investigador inspirarse e imaginarse cómo lograr lo que se enuncia en el mismo, evitando avanzar hacia una granularidad más fina que ya sería redundante.
+
+Los objetivos específicos deben ser listados y enumerados por orden cronológico de su abordaje, con este formato.
+
+\begin{enumerate}
+\item Objetivo 1.
+\item Objetivo 2.\\
+$\vdots$
+\item Objetivo \textit{n}.
+\end{enumerate}
+
+\section{Hipótesis}
+Para el método científico, una hipótesis es una solución provisoria pendiente de ser confirmada, acerca de cierto contexto del problema abordado. Es a la luz de la información empírica que habrá de obtenerse con el desarrollo del trabajo propuesto, que se deberá responder acerca de la veracidad de la hipótesis. Pueden formularse más de una hipótesis.
+
+Entonces, por motivos de coherencia interna, la hipótesis debe relacionarse con algún resultado que habrá de obtenerse, para así asegurar la obtención de respuesta  que la verifique total o parcialmente, o la refute. En ocasiones, la hipótesis está implícita en la viabilidad del método a ser seguido, afirmando simplemente que se puede lograr el objetivo propuesto siguiendo ese camino señalado por el método propuesto. Cuando se trata de trabajo de aplicación científica a desarrollo de producto o servicio, la hipótesis puede expresar simplemente que siguiendo el método que debe identificarse en la hipótesis, es posible obtener dicho producto o servicio tecnológico \cite{dpuntode, escuela}. 
+
+\section{Fundamentación}
+La fundamentación plantea razones de pertinencia en lo académico o área de estudio, en lo social y en lo personal.
+
+En la dimensión académica, el investigador debe referirse a aquellos aportes que al campo de conocimiento espera proveer con el trabajo de investigación, para lo cual sus razones pueden consistir en argumentos analíticos y descriptivos, siempre citando los hallazgos que produciría en beneficio de su campo disciplinario.
+
+En la dimensión social, el investigador expone los beneficios que la sociedad tendría una vez concluido el trabajo. Aquí la pertinencia de la propuesta de trabajo está dada por el impacto social, por la incidencia de sus resultados en el entorno local, por eso es necesario que el objeto de estudio se circunscriba explícitamente a un contexto próximo al investigador.
+
+En el aspecto personal, la justificación expone aquellas consideraciones que en lo individual motivan y mueven al trabajo de investigación, por lo que el investigador debe estar convencido de su voluntad de realizarlo.
+
+En conclusión, la fundamentación de un trabajo de investigación académico científico, requiere dar a conocer la razón de ser del trabajo, algo particularmente importante que contribuya a producir conocimiento en un campo disciplinario y que también impacte positivamente en la sociedad \cite{aguirre}.
+
+\section{Impacto de la investigación}
+El impacto del trabajo de investigación se refiere a la diferencia producida en el contexto real entre los tiempos antes y después de la ejecución del trabajo, y que sea causado por dicho trabajo, directa o indirectamente. Los dos aspectos de este impacto que deben ser mencionados son el impacto ecológico entendido por un lado como la alteración de la relación humano-ambiente, y por otro, la alteración del aspecto social en que opera la relación humano-humano. 
+
+\section{Marco teórico}
+Esta sección abarca conceptualmente dos aspectos relacionados al marco que sirve de recipiente contenedor de la teoría que abarca y enmarca el tema de investigación: por un lado los conceptos e ideas fundamentales, y por otro los trabajos de otros autores que sirven de marco de referencia al trabajo, esto es, los antecedentes. Se debe evitar desarrollar aquí las ideas del trabajo propio que se está proyectando, limitándose a la exposición y discusión del estado de desarrollo actual de los conocimientos científicos y tecnológicos. A modo de referencia, en el  PTFG, el marco teórico debería extenderse aproximadamente a tres páginas, pero puede aumentar cuando hay muchos conceptos e ideas que plantear, de acuerdo con el tema.
+
+\subsection{Conceptos e ideas fundamentales}
+Definiciones y profundizaciones descriptivas de conceptos e ideas que expresan la realidad abordada. Aquí se debe describir con cierto detalle, como la exploración de la literatura lo posibilite, el marco teórico en que se encuadra el trabajo propuesto.
+
+Muy importante: esta subsección debe estructurarse siguiendo la lógica de los ejes teóricos del tema abordado, dentro del área de conocimiento que lo contenga. A cada apartado dentro de la estructura construida debe corresponder un subnivel de títulos, cuidando de abrir un subnivel solo si este se compondrá de al menos dos tópicos, y evitando generar excesiva cantidad de niveles. Por ejemplo, si el tema del trabajo es una aplicación informática para testar transformadores eléctricos de potencia, hay como  mínimo dos ejes temáticos para teorizar: 1) las tecnologías de software con que puede desarrollarse la aplicación, y 2) las tecnologías involucradas en la construcción y el funcionamiento del transformador de potencia.
+
+La presente plantilla sigue una estructura compatible con el modelo IMRyD: Introducción, Método, Resultado y Discusión. En ella; la definición del problema, más el enunciado de los objetivos y la revisión del marco teórico, representan la introducción al tema; luego la propuesta del método a seguir para obtener los objetivos marcan el final de recorrido del proyecto de trabajo, pues como plan de trabajo, es solo una hoja de ruta previa a la ejecución del plan; se debe recordar y evitar desarrollar el trabajo, más allá de la definición de las tareas y procedimientos, la identificación de las variables claves de la problemática, y la fundación de referentes con respecto a los cuales hacer las estimaciones de las variables \cite{aacp}.
+
+\textbf{\textit{Citas en el texto y referencias al final del documento del PTFG}}. Al final del documento se debe escribir la lista de referencias bibliográficas, vale decir, la lista de fuentes consultadas y citadas en el cuerpo del documento de Anteproyecto de Trabajo Final de Grado, la misma debe ceñirse a las especificaciones de la IEEE\footnote{IEEE: Insitute of Electrical and Electronics Engineers (Instituto de Ingenieros Eléctricos y Electrónicos).}, como se muestra al final de este documento; es decir, una lista numerada al final del artículo, ordenada por orden de cita en el cuerpo del documento \cite{ieee}.
+
+\subsection{Antecedentes}
+Estudios y experiencias previas que se relacionan con el tema investigado y resumen de los hallazgos más importantes que ayudan a configurar el estado científico-técnico actual, en el área de la problemática tratada. Solo deben abarcarse hitos que jalonan la línea histórica hasta llegar al estado actual, y trabajos antecedentes que por su enfoque guardan relación próxima con el trabajo que se proyecta hacer, y se debe explicar qué relación guardan con el tema del trabajo propuesto. La exposición teórica debe discurrir desde lo más antiguo hacia lo actual y desde lo más amplio hacia el tema específico del trabajo. Al final esta revisión debe posibilitar averiguar el estado de conocimiento actual y en qué medida responde a las preguntas emanadas de la definición del problema \cite{sampieri}; obviamente, la respuesta solo puede ser parcial o nula para que amerite la realización de la investigación propuesta.
+
+\section{Método}
+El proceso de TFG se enmarca dentro del tipo de investigación formativa en el área de estudio de la carrera del graduando, guiado por tutor y sujeto a plazos académicos definidos. No obstante, se prevé la posibilidad de que el estudiante aventajado sea capaz de absorber el conocimiento necesario e incluso efectuar algún aporte de conocimiento al área de estudio en que desarrolla su TFG, la historia registra muchos casos afortunados en este sentido.
+
+Se inicia la planificación del trabajo propuesto, enfatizando aspectos predeterminados que devienen de la naturaleza de la problemática abordada. La naturaleza del trabajo propuesto puede ser básica o aplicada. En la investigación básica se pretende ampliar y profundizar el conocimiento de la realidad, vale decir, su objeto es la generación de conocimiento objetivo (enfoque científico). En la investigación aplicada se emplea conocimiento científico consolidado para obtener producto o servicio, acorde con el interés subjetivo del investigador (enfoque tecnológico).
+
+\subsection{Especificaciones de diseño}
+Partiendo de estas premisas, la caracterización del trabajo de investigación depende fundamentalmente de si se trata de investigación básica o aplicada. La diferencia marcante entre ambos tipos de trabajo se encuentra en lo que cada uno produce. La investigación básica genera dato y/o conocimiento científico, es decir, descubre lo que ya antes había. La investigación aplicada genera invento, es decir, genera algo nuevo; por lo tanto, tiene efecto transformador sobre la realidad. El concepto clave de la investigación básica es: \textit{descubrimiento}; en cambio, el concepto clave de la investigación aplicada es: \textit{invento}, también denominado \textit{innovación}. En este contexto, al tiempo de caracterizar el trabajo de investigación propuesto como TFG, se parte por decir y fundamentar el tipo de investigación de que se trata, a partir de ahí, hay una bifurcación esencial entre los métodos, determinada por el tipo de trabajo, según sea de investigación básica o aplicada.
+
+\subsubsection{Investigación básica}
+Con la investigación básica se pretende ampliar y profundizar el conocimiento de la realidad. Para lograr generar conocimiento se ponen en práctica las dos operaciones racionales básicas: inducción y deducción. Dependiendo de la problemática, puede resultar que el método sea inductivo, o deductivo, o hipotético deductivo. Es inductivo si se prevé utilizar premisas particulares para llegar a una conclusión general. Es deductivo si se prevé usar principios generales para llegar a una conclusión específica. Es hipotético deductivo cuando se combinan: inducción, bajo la forma de inferencia de hipótesis; con deducción, bajo la forma de identificación experimental de casos hipotetizados \cite{arrieta}. 
+
+La investigación básica puede ser cualitativa o cuantitativa, como casos extremos de una taxonomía basada en la relación natural entre lo conceptual y su intensidad conceptual. Si predominan exploraciones orientadas conceptualizar el objeto tratado, supeditando la cuantificación de sus intensidades, el enfoque es cualitativo. Si predominan estimaciones cuantificadas de uno o más conceptos del objeto tratado, supeditando la conceptualización de los mismos, entonces el enfoque es cuantitativo. Son frecuentes los trabajos en cuyos métodos se encuentran elementos conceptuales que son estimados cuantitativamente, vale decir, trabajos de investigación mixta cuali-cuantitativa.
+
+El nivel de profundidad del trabajo de investigación se refiere a la intensidad del esfuerzo por extraer una imagen epistémica fidedigna del fenómeno real tratado. A partir de la información proveída y del análisis y revisión de la literatura hecha, se debe especificar el nivel de profundidad del TFG propuesto. Se distinguen los siguientes niveles de profundidad del trabajo de investigación, por orden de complejidad:
+
+\begin{enumerate}
+\item Exploratorio: a este nivel de profundidad el investigador se limita a la información consolidadea disponible sobre el objeto, vale decir, se circunscribe a lo que dispone en fuentes secundarias. Equivale a una revisión del estado de la ciencia sobre el tema. El trabajo genera una monografía, vale decir, una compilación de literatura técnica temática, y puede servir como paso previo para un diseño de estudio más profundo del contexto problemático.
+
+\item Descriptivo: a este nivel de profundidad del análisis se toma contacto directo con el objeto de la investigación, mínimamente, a través de su observación. Es frecuente en la investigación de ciencias antropológicas. A su vez sirve como fuente de datos de entrada para un tratamiento más profundo del objeto. La importancia del trabajo descriptivo se pone de manifiesto al reconocerlo como vía para construir estadística acumulativa que alberga patrones de regularidad, que luego están disponibles para inferir hipótesis por razonamiento inductivo, eventualmente probarlas y aportar conocimiento científico.
+
+\item Correlacional: a este nivel de profundidad del análisis se averigua en qué grado dos variables se encuentran relacionadas. Cuando el estudio correlacional indica que las unidades de análisis que asumen valores altos en una de las variables, también asumen valores altos en la otra variable; y que las unidades de análisis que asumen valores bajos en una de las variables, también asumen valores bajos en la otra variable; entonces, estos resultados indican una correlación positiva. Cuando la relación es inversa: cuando las unidades de análisis que asumen valores altos en una de las variables, asumen valores bajos en la otra variable, y viceversa, esto indica una correlación negativa. La correlación entre las variables puede expresarse en términos de una relación lineal representada por una recta de regresión, i.e., $y = a +bx$; y puede ser estimada por estadísticos conocidos como coeficientes de correlación, por ej. el coeficiente de correlación  de  Pearson. El valor que este coeficiente puede asumir está contenido en el intervalo [-1, 1]. El valor de -1 indica relación lineal negativa perfecta; el valor de 1 indica relación lineal positiva perfecta; el valor cero indica ausencia total de relación lineal entre las dos variables \cite{estudios-correl}.
+
+\item Explicativo: a este nivel de profundidad del análisis, el investigador busca responder por las causas del fenómenos real tratado. El esfuerzo se enfoca en explicar por qué ocurre un fenómeno y en qué condiciones se manifiesta. Es el nivel más profundo y estructurado, de hecho sigue en la línea de continuidad  demás niveles citados. Proporciona un sentido de entendimiento del fenómeno objeto de la investigación; en este sentido, realiza la finalidad del conocimiento científico, puesto que provee capacidad de predicción del fenómeno tratado \cite{sampieri_2}.
+\end{enumerate}
+
+El término diseño se refiere al plan o estrategia concebida para obtener la información que se desea \cite{sampieri_3}. El diseño del TFG propuesto tiene por objeto caracterizar el trabajo, ayudando a atender el problema de investigación, cumplir objetivos del estudio y someter la/s hipótesis a prueba. A partir de la información proveída, más el análisis del tema de investigación, se debe especificar el diseño del TFG propuesto.
+
+Tratándose de investigación básica con enfoque cuantitativo, los diseños pueden ser:
+\begin{itemize}
+\item experimentales: en ellos se manipulan intencionalmente las variables independientes y se miden las variables dependientes.
+\item no experimentales: en ellos se evita manipular variables, los fenómenos son observados tal como se dan en su contexto natural. Se los puede distinguir según  pueden ser transversales o longitudinales, dependiendo de si los datos se recolectan una sola vez en el tiempo, o varias veces, a objeto de observar cambios y procesos evolutivos, respectivamente.
+\end{itemize}
+
+Tratándose de investigación básica cualitativa, el término diseño adquiere significado distinto al que posee dentro del enfoque
+cuantitativo, particularmente porque las investigaciones cualitativas no se planean con detalle y están sujetas a las circunstancias de cada ambiente o escenario particular. En el enfoque cualitativo, el diseño se refiere al abordaje general que se habrá de utilizar en el proceso de investigación, se lo ha llegado a denominar simplemente marco interpretativo. Asimismo, cabe señalar que las fronteras entre tales diseños son sumamente relativas, realmente no existen, y la mayoría de los estudios toma elementos de más de uno de éstos. Es decir, los diseños se yuxtaponen. Cierta clasificación últimamente común considera los siguientes diseños genéricos cuyos nombres son de por sí descriptivos de su naturaleza: 
+\begin{itemize}
+\item Teoría fundamentada: Su propósito es desarrollar teoría basada en datos empíricos y se aplica a áreas específicas.
+\item Diseños etnográficos: En ellos se pretende describir y analizar ideas, creencias, significados, conocimientos y prácticas de grupos, culturas y comunidades.
+\item Diseños narrativos: En ellos se recolectan datos sobre las historias de vida y experiencias de ciertas personas para describirlas y analizarlas. Resultan de interés los individuos en sí mismos y su entorno.
+\item Diseños de investigación-acción: Su finalidad es resolver problemas cotidianos e inmediatos. y mejorar prácticas concretas. Su propósito fundamental se centra en aportar información que guíe la toma de decisiones para programas, procesos y reformas estructurales.
+\end{itemize}
+
+\subsubsection{Investigación aplicada o tecnológica}
+Con la investigación aplicada se pretende utilizar el conocimiento científico disponible para transformar la realidad en beneficio de la sociedad. Para lograr este propósito, se debe reunir el requisito de conocimiento científico acabado en el área de estudio del tema de investigación. A este requisito se suma el que se debe adquirir mediante los mismos recursos racionales que en la investigación básica: inducción y deducción.
+
+La transformación de la realidad a través del trabajo de investigación puede ocurrir de forma tangible, por ejemplo, mediante la construcción de un prototipo de artefacto físico; o de forma intangible, por ejemplo mediante la elaboración de una aplicación informática, o mediante la elaboración de un plan de servicio turístico, o un manual de mantenimiento de transformador de potencia.
+
+La descripción interpretativa precedente acerca de la investigación aplicada, muestra que la misma guarda similitud con el desarrollo tecnológico. De hecho, la tecnología surge naturalmente como realización del interés humano obtener provecho del conocimiento científico, más aún, a decir de \cite{dean}: la realizabilidad tecnológica ``Lo es materialmente si no contradice las leyes naturales conocidas y presenta una probabilidad razonable de lograr la conversión del conocimiento científico''.
+
+Partiendo del concepto \textit{tecnología}: conjunto de conocimientos científicos y técnicos a propósito para transformar la realidad generando invento de interés humano; resulta claro que la investigación aplicada coincide con el desarrollo tecnológico. Luego, la investigación aplicada resulta en un proceso productivo, siendo el producto un invento o innovación. Si el invento fue generado completamente desde el principio, se trata de una innovación radical: totalmente nueva; si solo se ha modificado algo previamente inventado, la innovación es incremental.
+
+En conclusión, la investigación aplicada coincide con lo que se ha dado en llamar \textit{investigación tecnológica}, por un lado; y por otro, al contener elementos propios del dominio subjetivo/intersubjetivo humano, a decir de \cite{dean}, ``Es una adaptación intencionada de medios para alcanzar un fin preconcebido superador de una situación inicial dada, y esto constituye una parte esencial de la ingeniería'', corresponde tener presente esa distinción fundacional que conlleva todo un conjunto de técnicas propias de la ingeniería y que configuran un método propio, el cual es el que hay que caracterizar del proyecto de TFG en caso de que el mismo se trate de un caso de investigación aplicada o tecnológica.
+
+Siendo la ingeniería, la actividad humana abocada a la generación de tecnologías, al tiempo de caracterizar su proyecto de TFG, con frecuencia encuentra que el trabajo por hacer es un caso de investigación tecnológica. En este contexto, para caracterizar el PTFG, se recomienda apoyarse en la descripción genérica del método de investigación tecnológica facilitada presentada a continuación.
+
+De acuerdo con \cite{dean}, es posible identificar de manera genérica el proceso de desarrollo tecnológico limitado al ámbito académico, como la vía que va desde la idea o concepto original hasta su concreción material, a través de las siguientes etapas:
+\begin{enumerate}[label=\alph*)]
+\item invención o adaptación de concepto, que es una etapa de diseño analítico donde el concepto básico es examinado para explicitar las restricciones o especificaciones de diseño;
+\item análisis del concepto, que es una etapa de diseño detallado donde las operaciones normales son exploradas para encontrar dónde el diseño es deficiente y sus límites son experimentados a través de pruebas o experimentos funcionales, lo cual genera ciclos de diseño-prueba que posibilitan ajustar o mejorar el diseño;
+\item síntesis del concepto, caracterizado por modelos físicos a escala de laboratorio, vale decir, prototipación, y experimentos funcionales.
+\end{enumerate}
+
+Basado en este método, se puede decir que el alcance en profundidad del trabajo de investigación aplicada o tecnológica lo constituye el nivel de complejidad que demandan las especificaciones de diseño de la prototipación del producto, las cuales dependen de la funcionalidad del producto deseado.
+
+Con respecto al diseño del trabajo de investigación tecnológica del TFG, hay que tener en cuenta que este se refiere a todo el proceso realizado por el investigador, y dentro de este proceso, como parte del diseño del TFG, se encuentran contenidas las especificaciones propias del producto, es decir, las especificaciones funcionales del prototipo a ser obtenido; por lo tanto, limitarse en esta subsección a la referencia del diseño del producto en lugar de referirse a todo el diseño del TFG constituye un error que debe evitarse.
+
+\subsection{Lista de tareas}
+Una vez caracterizado el trabajo de investigación se procede a plantear los procedimientos definidos por técnicas propias de la naturaleza del problema (relaciones entre variables) y por los objetivos decididos por el investigador.
+
+Se recomienda adoptar el enfoque pragmático de listar las tareas resultantes de los procesos, procedimientos, técnicas, etc., que se planean ejecutar. Cada tarea debe expresarse en tópico separado y según secuencia cronológica de ejecución. La primera palabra con que inicia el enunciado de la tarea, debe escribirse con sustantivo, (evitar iniciar la descripción de la tarea con verbo en infinitivo, el cual se destina solo al iniciar enunciado de objetivo).
+
+\begin{enumerate}
+\item Tarea 1,
+\item Tarea 2,\\ 
+$ \vdots $
+\item Tarea \textit{n}.
+\end{enumerate}
+
+Esta subsección termina con la elaboración del cronograma de tareas, representado por una tabla en cuya primera columna desde la izquierda se listan las tareas de la lista anteriormente elaborada, y en las siguientes columnas se indican los plazos, dentro del dominio de tiempo previsto hasta la terminación del trabajo. En la primera fila de la tabla se escriben los encabezados de tarea y tiempo, recordando especificar cuándo inicia el desarrollo del trabajo en sí, ya que de otro modo el cronograma queda flotando en el tiempo. Se debe evitar incluir en el cronograma las tareas o actividades propias de la elaboración del PTFG, ya que, como su nombre lo indica, el cronograma se refiere a actividades futuras, véase la tabla \ref{tab:cronograma}.
+
+\begin{center}
+\begin{table}[h]
+\begin{center}
+\caption{Cronograma de tareas}
+\label{tab:cronograma}
+\begin{scriptsize}
+\begin{tabular}{|>{\columncolor[rgb]{0.8,0.8,0.8}}c|cccccccc|}
+\hline 
+ & \multicolumn{8}{>{\columncolor[rgb]{0.8,0.8,0.8}} c |}{Inicio: mes de año.} \\ 
+\multirow{-2}{*}{Tareas} & \cellcolor[rgb]{0.8,0.8,0.8} Mes 1.1 & \cellcolor[rgb]{0.8,0.8,0.8} Mes 1.2
+ & \cellcolor[rgb]{0.8,0.8,0.8} Mes 2.1 & \cellcolor[rgb]{0.8,0.8,0.8} Mes 2.2  & \cellcolor[rgb]{0.8,0.8,0.8} Mes 3.1 & 
+ \cellcolor[rgb]{0.8,0.8,0.8} Mes 3.2  & \cellcolor[rgb]{0.8,0.8,0.8} Mes 4.1 & \cellcolor[rgb]{0.8,0.8,0.8} Mes 4.2 \\ 
+\hline 
+ 1) Xxxxx &\cellcolor{blue!25} & & &\cellcolor{blue!25} & & & & \\
+ 2) Xxxxx & & \cellcolor{blue!25} & \cellcolor{blue!25} &  \cellcolor{blue!25} &  \cellcolor{blue!25} & & & \\ 
+ 3) Xxxxx & & & & \cellcolor{blue!25} & \cellcolor{blue!25} &  \cellcolor{blue!25} &  \cellcolor{blue!25} & \\ 
+ $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $\\ 
+ n) Xxxxx & & & & & & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} \\ 
+\hline
+\end{tabular}
+\end{scriptsize}
+\end{center}
+\end{table}
+\end{center}
+
+Si la tarea de construir tabla en Latex se vuelve compleja y ardua, se la puede construir en algún editor de preferencia y luego guardarla como imagen de tabla en archivo png, jpg o pdf, en el mismo directorio o carpeta del archivo tex del PTFG, como es el caso de la tabla \ref{tab:cronog_imagen}. Como se puede apreciar, el entorno que contenga la tabla debe ser \textit{$\backslash$begin$\lbrace$table$\rbrace$ ... $\backslash$end$\lbrace$table$\rbrace$}, para que el contador de tablas la considere tabla (de otro modo el compilador la considera y la cuenta como si fuera figura).
+
+\begin{center}
+\begin{table}[H]
+\begin{center}
+\caption{Cronograma de tareas. \label{tab:cronog_imagen}}
+\includegraphics[scale=.8]{./crono_tareas}
+\end{center}
+\end{table}
+\end{center}
+
+\subsection{Operacionalización de variables}
+En esta subsección se deben identificar las variables con que se manifiesta el fenómeno objeto de investigación. Seguidamente, las variables deben ser operacionalizadas, ya que se debe operar con ellas, vale decir, se las debe estimar para así conocer cómo se manifiesta el fenómeno. Es importante seleccionar correctamente para incluir todas las variables que son claves según el enfoque con que se aborda la solución del problema de investigación, pero que sean pocas para facilitar su control.
+
+La operacionalización de variables conlleva proveer, en párrafo separado para cada variable, su: a) Denominación: una palabra o frase que identifique lo más precisamente posible la variable. b) Definición: breve explicación descriptiva del significado de la variable. Y c) Estimador: se debe indicar el modo de estimar la variable; puede ser una unidad de medida, típicamente para variable cuantificable, ej. \textit{voltio}; un instrumento o una escala definida, típicamente para variables cualitativas, ej. \textit{métrica de calidad de software}, \textit{escala Likert sobre grado de satisfacción con el aplicativo, criterio de experto sobre la configuración del sistema, descripción técnica de parámetros del transformador de potencia, ...} Las partes descriptivas a), b) y c) deben escribirse en oraciones simples separadas por punto y seguido. Para este efecto hay que seguir el formato de la lista mostrada a continuación.
+
+\begin{enumerate}
+\item Nombre de la variable 1: Definición de la variable 1. Estimador de la variable 1.
+\item Nombre de la variable 2: Definición de la variable 2. Estimador de la variable 2.\\
+ $ \vdots $
+\item Nombre de la variable \textit{n}: Definición de la variable \textit{n}. Estimador de la variable \textit{n}.
+\end{enumerate}
+
+Luego de haber definido y operacionalizado todas las variables, se debe elaborar y desplegar una tabla, como la tabla \ref{tab:opera} en la que deben aparecer de izquierda a derecha: los objetivos específicos en la primera columna, y yuxtapuestos en las columnas aledañas, para cada objetivo por separado, a partir de la segunda columna, respectivamente: las tareas que conlleva lograr el objetivo, las variables de trabajo que serán estimadas para conocer cómo se resuelve el objetivo, y en la última columna, el estimador unívoco para la variable. El epígrafe de tabla debe situarse sobre la tabla, como se muestra en la tabla \ref{tab:opera}.
+
+\begin{center}
+\begin{table}[h]
+\begin{center}
+\caption{Operacionalización de variables.}\label{tab:opera}
+\begin{tabular}{||l|c|c|c||}
+\hline
+\cellcolor{gray!25}Objetivo específico& \cellcolor{gray!25}Tarea & \cellcolor{gray!25}Variable &\cellcolor{gray!25}Estimador*\\
+\hline
+\multirow{2}{*}{Objetivo 1}&''&''&''\\
+&''&''&''\\
+\hline
+\multirow{2}{*}{Objetivo 2}&''&''&''\\
+&''&''&''\\
+\hline
+\multirow{2}{*}{Objetivo 3}&''&''&''\\
+&''&''&''\\
+\hline
+\multirow{2}{*}{$\cdots$} & $\cdots$ & $\cdots$ & $\cdots$ \\
+& $\cdots$ & $\cdots$ & $\cdots$\\
+\hline
+\multirow{2}{*}{Objetivo \textit{n}}&''&''&''\\
+&''&''&''\\
+\hline
+\multicolumn{4}{||c||}{{\scriptsize *Estimador: unidad de medida o instrumento, o especie de indicador descriptor de la variable.}}\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{center}
+
+\textbf{\textit{Elementos gráficos.}} Es recomendable incluir un \textit{diagrama de flujo} del proceso a ser ejecutado, incluyendo al menos las principales tareas. Tratándose el tema de TFG, de un desarrollo tecnológico o de un servicio propuesto, se recomienda incluir un diagrama funcional del producto o servicio, y explicarlo mediante referencias cruzadas en el texto, haciendo referencia a la figura de dicho diagrama, ya que un recurso visual es más objetivo y claro para entender, ahorrando mucho esfuerzo de explicación. Son útiles para ayudar a ilustrar conceptos, relaciones y todo tipo de resultado desplegable como imagen visual. Entre estos elementos resalta por su importancia el diagrama de flujo del método del trabajo, en general; y en particular, el diagrama funcional del producto del trabajo. Un diagrama funcional es aquel que muestra las funciones de un sistema de forma gráfica y con algunas aclaraciones, es decir, con referencia cruzada en el texto, como este diagrama de la figura \ref{fig:diagrama}. El epígrafe de figura debe situarse al pie de la figura, como se muestra en la figura \ref{fig:diagrama}.
+
+\begin{figure}[H]
+\begin{minipage}{\textwidth}
+\begin{center}
+\includegraphics[scale=.5]{./diag_funcional}
+\caption{Diagrama funcional}
+\label{fig:diagrama}
+\end{center}
+\end{minipage}
+\end{figure}
+
+\textbf{\textit{Entornos matemáticos.}} Las expresiones matemáticas se escriben solamente dentro de entornos matemáticos, también, en general, los símbolos propios de expresiones matemáticas. A continuación, algunos de estos entornos y expresiones matemáticas como ejemplos:
+
+Una ecuación en línea puede escribirse de esta manera: $\int_{-\infty}^{\infty} e^{-x^{2}} \, dx
+= \sqrt{\pi}$, donde el entorno en línea está denotado por el par de apertura y cierre \$ \dots \$. Opcionalmente, se logra el mismo resultado con el par $ \backslash( \dots \backslash) $, como puede apreciarse: \( \int_{-\infty}^{\infty} e^{-x^{2}} \, dx
+= \sqrt{\pi} \).
+
+Una expresión matemática desplegada en línea especial separada del texto se obtiene con el entorno matemático creado por el par de apertura y cierre $ \backslash[ \dots \backslash] $. Por ejemplo: \[ \left( \frac{1}{2} \right)^{\alpha} \] se obtiene de esta manera.
+
+Cuando se demanda de ecuaciones numeradas, principalmente útiles para referencias cruzadas a las mismas, se emplea el siguiente entorno matemático que produce la salida correspondiente:
+
+\begin{equation}
+\sum_{i = 1}^{ \left[ \frac{n}{2} \right] }
+\binom{ x_{i, i + 1}^{i^{2}} }
+{ \left[ \frac{i + 3}{3} \right] }
+\frac{ \sqrt{ \mu(i)^{ \frac{3}{2}} (i^{2} - 1) } }
+{\sqrt[3]{\rho(i)-2} + \sqrt[3]{\rho(i) - 1}}
+\end{equation}
+
+Nótese el uso de indentación jerárquica para rastrear la estructura de la fórmula, el espaciado para resaltar las llaves y la separación de líneas para los varios pedazos de fórmulas que son más largas que una línea de texto normal. Latex posee la capacidad de gestión automática de numeración y contadores, de manera que el escritor no debe actualizar manualmente los cambios de número y sus respectivas referencias.
+
+Como ejemplo final, este es un ejemplo de referencia cruzada, (teorema \ref{Pitag} y Ec. \ref{pitag}):
+
+\begin{teorema}[Teorema de Pitágoras]
+En un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos:
+\begin{equation}
+hip^2 = cat_1^2 + cat_2^2
+\label{pitag}
+\end{equation}
+\label{Pitag}
+\end{teorema}
+donde: \textit{hip} es la hipotenusa del triángulo rectángulo y, $ cat_1 $ y $ cat_2 $ son los catetos del mismo.
+
+\addcontentsline{toc}{section}{Referencias Bibliográficas}
+
+\bibliographystyle{IEEEtran-castellano}
+\bibliography{refer}
+
+\end{document}

@@ -1,0 +1,19 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Definici\'on del problema}{2}{section.1}%
+\contentsline {section}{\numberline {2}Delimitaci\'on del trabajo.}{2}{section.2}%
+\contentsline {section}{\numberline {3}Objetivos}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Objetivo general}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Objetivos espec\IeC {\'\i }ficos}{3}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Hip\'otesis}{3}{section.4}%
+\contentsline {section}{\numberline {5}Fundamentaci\'on}{4}{section.5}%
+\contentsline {section}{\numberline {6}Impacto de la investigaci\'on}{4}{section.6}%
+\contentsline {section}{\numberline {7}Marco te\'orico}{4}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Conceptos e ideas fundamentales}{5}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Antecedentes}{6}{subsection.7.2}%
+\contentsline {section}{\numberline {8}M\'etodo}{6}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Especificaciones de dise\~no}{6}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Investigaci\'on b\'asica}{7}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Investigaci\'on aplicada o tecnol\'ogica}{9}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.2}Lista de tareas}{11}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Operacionalizaci\'on de variables}{12}{subsection.8.3}%
+\contentsline {section}{Referencias Bibliogr\'aficas}{15}{equation.2}%
