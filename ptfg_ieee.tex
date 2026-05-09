@@ -17,22 +17,26 @@
 \hyphenation{Re-fe-ren-cias}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-%\usepackage{color}              % For creating coloured text and background
-\usepackage[hidelinks]{hyperref}            % For creating hyperlinks in cross references
+\usepackage[hidelinks]{hyperref}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{longtable}
 \columnsep 0.8 cm
 \pagestyle{plain}
 \newtheorem{teorema}{Teorema}
 \fancyfoot{}
+\setcounter{secnumdepth}{4} % Permite numerar hasta el nivel de párrafo
+\setcounter{tocdepth}{4}    % Opcional: para que también aparezca en el índice
 
 \begin{document}
+
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\refname}{Referencias bibliográficas}
 
 \begin{titlepage}
 
 \vspace*{-3cm}
-
-%\thispagestyle{empty}
 
 {\bf
 \begin{center}
@@ -42,43 +46,43 @@
 \vspace*{0.5 cm}\hrule
 \vspace*{0.5 cm}
 \vspace*{0 cm}\Large Anteproyecto de  Trabajo Final de Grado\\
-\vspace*{0.5 cm}\large Carrera $<$Nombre de la Carrera$>$\\
-\vspace*{0 cm}\large Cátedra $<$Nombre de la Cátedra$>$\\
+\vspace*{0.5 cm}\large Carrera Ingeniería de sistemas\\
+\vspace*{0 cm}\large Cátedra Trabajo final de grado 1\\
 \end{center}
 }
 
-\vspace{3 cm}
+\vspace{1 cm}
 {
 \noindent
 \begin{center}
-\huge \bf $<$Título del Anteproyecto de  Trabajo Final de Grado$>$
+\huge \bf Sistema web de apoyo para diagnóstico del TEA, usando arquitectura CNN-LSTM para identificar  patrones conductuales
 \end{center}
 }
 
 \vspace{0.5 cm}
 
 { 
-Por: \textbf{\Large $<$Nombre del graduando 1$^1>$}
+Por: \textbf{\Large Bella Luz Benítez González$^1$}
 
-\hspace{1 cm} y \textbf{\Large $<$Nombre del graduando 2$^2>$}
+\hspace{1 cm} y \textbf{\Large Martin Escobar Azcona$^2$}
 
 \vspace*{.5 cm}
-Profesor Orientador: \textbf{\large $<$Nombre del Profesor Orientador$^3>$}
-}%\\[6mm]
+Profesor Orientador: \textbf{\large Katia Andrea Ayala$^3$}
+}
 \vspace*{0.5 cm}\\
 
-Profesor de la Cátedra: \textbf{\large $<$Nombre del Profesor de la Cátedra$>$}
+Profesor de la Cátedra: \textbf{\large Celso Alberto Rojas Pukall}
 
 \vspace{3.0cm}
 
 \begin{minipage}{0.9\textwidth}
 \begin{flushleft}
 \begin{footnotesize}
-\begin{scriptsize}$^{1}$\end{scriptsize}Tel: ,\\
-correo electrónico:  \\
+\begin{scriptsize}$^{1}$\end{scriptsize}Tel: 0971197990 ,\\
+correo electrónico: bellabenitez03@gmail.com  \\
 \vspace*{.5cm}
-\begin{scriptsize}$^{2}$\end{scriptsize}Tel: ,\\
- correo electrónico:  \\
+\begin{scriptsize}$^{2}$\end{scriptsize}Tel: 0973821390 ,\\
+ correo electrónico: martinescobarazcona123@gmail.com  \\
 \vspace*{.5cm}
 \begin{scriptsize}$^{3}$\end{scriptsize}Tel: ,\\
  correo electrónico:  \\
@@ -99,277 +103,838 @@ correo electrónico:  \\
 
 \vspace{1cm}
 
-\title{Título del Anteproyecto de  Trabajo Final de Grado (PTFG)}
+\title{Sistema web de apoyo para diagnóstico del TEA, usando arquitectura CNN-LSTM para identificar  patrones conductuales}
 \vspace{1cm}
 \date{}
 \maketitle
 
 \thispagestyle{empty}
 \section{Definición del problema}
-Introducción que presenta el problema abordado y su definición. Se acostumbra formular interrogantes o preguntas de investigación que señalan la orientación del tratamiento y las estrategias de investigación; luego, de cada pregunta debe surgir al menos un objetivo específico.
+ El Trastorno del Espectro Autista (TEA) es una condición del neurodesarrollo caracterizada por dificultades en la comunicación social, la interacción social y la presencia de patrones de comportamiento restringidos o repetitivos. Estas manifestaciones pueden observarse desde los primeros años de vida y suelen evidenciarse a través de señales conductuales como escaso contacto visual, dificultades en la comunicación, ausencia de respuesta al nombre, movimientos repetitivos, intereses restringidos o conductas estereotipadas. La identificación temprana de estas características es fundamental, ya que permite iniciar intervenciones oportunas que favorecen el desarrollo cognitivo, social y comunicativo de los niños \cite{mspbs2023}.
 
-Al enunciar formalmente el problema de investigación se debe tener cuidado para evitar incurrir en la confusión entre el problema de conocimiento y el problema real: generalmente el problema de investigación solo resuelve el problema de conocimiento, pues la solución del problema real demanda la implementación real de la solución del problema de conocimiento, lo cual suele encontrarse fuera del alcance del investigador. A lo sumo, en casos de problemas de aplicación de conocimiento a desarrollo tecnológico, al investigador le compete desarrollar prototipo del producto propuesto, sea este tangible (ej. robot) o intangible (ej. aplicación informática). Esta sección debe concluir enunciando concreta y explícitamente el problema de investigación, así:
+ En Paraguay, el Trastorno del Espectro Autista representa un desafío creciente para el sistema de salud y para las familias. De acuerdo con información difundida por el Instituto de Previsión Social, se estima que entre 45.000 y 133.000 personas podrían encontrarse dentro del espectro autista en el país, lo que evidencia la necesidad de fortalecer las estrategias de detección y atención temprana \cite{ips2024}.
 
-Definición del problema: \textit{Aquí se escribe en letras cursivas el enunciado del problema de investigación}.
+ Muchos padres o cuidadores acuden a consulta cuando observan señales conductuales en sus hijos, tales como juego solitario, dificultades en la interacción social, rigidez en el comportamiento, caminar en puntillas, aleteo de manos o movimientos repetitivos. Estas señales pueden manifestarse desde edades tempranas y constituyen indicadores relevantes para la evaluación del desarrollo infantil.
 
-\section{Delimitación del trabajo.}
-El conocimiento científico es por naturaleza perfectible, incompleto y abierto: siempre es posible ampliarlo y profundizarlo. Por lo tanto, se deben poner límites al trabajo proyectado, debido a limitaciones de recursos, espacio, tiempo y formación científica del investigador.
+ A pesar de los avances en protocolos de atención y en la concienciación sobre el autismo, diversos estudios señalan que el TEA ha sido históricamente subdiagnosticado, y que en muchos casos el diagnóstico formal se realiza varios años después de la aparición de los primeros signos. En América Latina, los síntomas suelen identificarse alrededor de los 18 meses de edad, sin embargo, el diagnóstico definitivo puede confirmarse aproximadamente a los cuatro años, lo que retrasa el inicio de intervenciones especializadas \cite{arberas2019}.
+
+ En Paraguay, el protocolo nacional para la atención del Trastorno del Espectro Autista recomienda la vigilancia del desarrollo infantil mediante evaluaciones periódicas y la identificación de signos de alerta en edades tempranas, con el fin de facilitar la derivación oportuna a servicios especializados \cite{mspbs2023}.
+ 
+ No obstante, en la práctica pueden existir dificultades para sistematizar la observación de conductas, registrar adecuadamente los patrones de comportamiento y apoyar el proceso de evaluación clínica con herramientas tecnológicas que permitan analizar de manera más objetiva las manifestaciones conductuales.
+
+ En este contexto, surge la necesidad de explorar herramientas basadas en aprendizaje automático que permitan reconocer patrones conductuales asociados al Trastorno del Espectro Autista, con el propósito de brindar apoyo al proceso de evaluación temprana realizado por profesionales de la salud. Estas herramientas no pretenden reemplazar el diagnóstico clínico, sino contribuir a la identificación temprana de señales conductuales relevantes que puedan facilitar la toma de decisiones en el ámbito clínico y educativo.
+
+ Por tanto, se define como problema de investigación del TFG propuesto la
+ \textit{ necesidad de un sistema web de apoyo para diagnóstico del TEA, mediante el empleo de una arquitectura CNN-LSTM capaz de identificar patrones de conducta a partir del análisis de secuencias de video. }
+
+\section{Delimitación del trabajo}
+El trabajo se limita al desarrollo de un prototipo de sistema web capaz de identificar tres conductas repetitivas visualmente observables asociadas al TEA: aleteo de manos, balanceo corporal y movimientos repetitivos de cabeza.
+
+El análisis se realizará exclusivamente a partir de secuencias de video, sin contemplar señales de audio, cuestionarios clínicos ni historial médico del paciente. 
+
+Los datos utilizados para el entrenamiento y evaluación del modelo provienen de videos de acceso público disponibles en plataformas como YouTube, así como de videos de recolección propia, seleccionados y etiquetados manualmente conforme a las conductas definidas.
+
+Desde el punto de vista tecnológico, la investigación abarca el uso de una arquitectura CNN-LSTM, sin que el alcance implique una comparación exhaustiva con otras arquitecturas. La validación del modelo se lleva a cabo mediante métricas técnicas estándar sin pretender reemplazar el
+diagnóstico realizado por profesionales de la salud especializados en TEA. El sistema estará orientado al uso por padres y cuidadores como herramienta de apoyo en el registro y análisis de conductas en el entorno familiar sin incluir un estudio clínico formal.
 
 \section{Objetivos}
-Los objetivos expresan lo que se quiere lograr para responder satisfactoriamente las interrogantes surgidas de la formulación del problema. Se dividen en dos tipos: objetivo general y objetivos específicos. Resulta obvio que el discurso del PTFG debe ser genéricamente en tiempo futuro, teniendo en cuenta que los objetivos aún están por lograrse; y genéricamente se deben evitar expresiones en tiempo pasado.
 
 \subsection{Objetivo general}
-El objetivo general, como propósito de la investigación, se inspira en la definición formal del problema de investigación y engendra el título del trabajo, tan es así que este suele obtener a partir del objetivo principal.
- 
-\subsection{Objetivos específicos}
-Son cada parte de que se compone todo lo que el objetivo general demanda realizar, ajustado a la delimitación del trabajo. Ningún objetivo específico debe expresar lo mismo que el objetivo general, de ser así, lo eclipsaría; sino que debe expresar un logro parcial deseado, dentro del gran logro que se busca con el objetivo general. Los objetivos específicos deben ser mutuamente excluyentes, de complejidad parecida, deben referirse a procesos (ej. obtener cierto algoritmo) y evitar referirse a actos (ej. entregar cierto informe) y su granularidad debe ser la que posibilite al investigador inspirarse e imaginarse cómo lograr lo que se enuncia en el mismo, evitando avanzar hacia una granularidad más fina que ya sería redundante.
 
-Los objetivos específicos deben ser listados y enumerados por orden cronológico de su abordaje, con este formato.
+Desarrollar un sistema web de apoyo al diagnóstico del TEA mediante el empleo de una arquitectura CNN-LSTM capaz de identificar patrones de conducta a partir del análisis de secuencias de video.
+
+\subsection{Objetivos específicos}
 
 \begin{enumerate}
-\item Objetivo 1.
-\item Objetivo 2.\\
-$\vdots$
-\item Objetivo \textit{n}.
+\item Adquirir conocimiento sobre la tecnología CNN-LSTM aplicada al TEA.
+\item Recolectar los datos conductuales asociados al TEA.
+\item Diseñar la arquitectura de un modelo basado en redes neuronales CNN-LSTM para el reconocimiento de patrones conductuales asociados al TEA.
+\item Preprocesar imágenes que posibilita la extracción de características relevantes a partir de los fotogramas de video.
+\item Entrenar el modelo utilizando los datos preparados.
+\item Evaluar el desempeño del modelo mediante métricas en la identificación de patrones de conducta repetitivos asociados al TEA.
+\item Elaborar una plataforma web que integre el modelo de diagnóstico de TEA.
+\item Validar el funcionamiento mediante pruebas de identificación de patrones de conducta asociados al TEA.
 \end{enumerate}
 
 \section{Hipótesis}
-Para el método científico, una hipótesis es una solución provisoria pendiente de ser confirmada, acerca de cierto contexto del problema abordado. Es a la luz de la información empírica que habrá de obtenerse con el desarrollo del trabajo propuesto, que se deberá responder acerca de la veracidad de la hipótesis. Pueden formularse más de una hipótesis.
 
-Entonces, por motivos de coherencia interna, la hipótesis debe relacionarse con algún resultado que habrá de obtenerse, para así asegurar la obtención de respuesta  que la verifique total o parcialmente, o la refute. En ocasiones, la hipótesis está implícita en la viabilidad del método a ser seguido, afirmando simplemente que se puede lograr el objetivo propuesto siguiendo ese camino señalado por el método propuesto. Cuando se trata de trabajo de aplicación científica a desarrollo de producto o servicio, la hipótesis puede expresar simplemente que siguiendo el método que debe identificarse en la hipótesis, es posible obtener dicho producto o servicio tecnológico \cite{dpuntode, escuela}. 
+El algoritmo que implementa arquitectura CNN-LSTM, propuesto para detectar trastorno del espectro autista, basado en patrones de conducta identificados en secuencias de video, será capaz de detección temprana de al menos 85\% de los casos analizados.
 
 \section{Fundamentación}
-La fundamentación plantea razones de pertinencia en lo académico o área de estudio, en lo social y en lo personal.
 
-En la dimensión académica, el investigador debe referirse a aquellos aportes que al campo de conocimiento espera proveer con el trabajo de investigación, para lo cual sus razones pueden consistir en argumentos analíticos y descriptivos, siempre citando los hallazgos que produciría en beneficio de su campo disciplinario.
+El Trastorno del Espectro Autista será abordado en este trabajo como una condición del neurodesarrollo caracterizada por dificultades en la comunicación social y la presencia de patrones de comportamiento estereotipados \cite{arberas2019}. La detección temprana será considerada crucial, ya que posibilitará la implementación de intervenciones oportunas orientadas a mejorar la calidad de vida de las personas afectadas \cite{oms2024}.
 
-En la dimensión social, el investigador expone los beneficios que la sociedad tendría una vez concluido el trabajo. Aquí la pertinencia de la propuesta de trabajo está dada por el impacto social, por la incidencia de sus resultados en el entorno local, por eso es necesario que el objeto de estudio se circunscriba explícitamente a un contexto próximo al investigador.
+En la dimensión académica, el presente trabajo contribuirá al campo de la Ingeniería en Sistemas mediante la generación de conocimiento aplicado sobre el uso de modelos de aprendizaje profundo, específicamente arquitecturas CNN-LSTM, para el análisis de patrones de comportamiento humano a partir de secuencias de video.
 
-En el aspecto personal, la justificación expone aquellas consideraciones que en lo individual motivan y mueven al trabajo de investigación, por lo que el investigador debe estar convencido de su voluntad de realizarlo.
+Los resultados que se obtendrán podrán servir como referencia para futuras investigaciones en el área de inteligencia artificial aplicada a la salud.
 
-En conclusión, la fundamentación de un trabajo de investigación académico científico, requiere dar a conocer la razón de ser del trabajo, algo particularmente importante que contribuya a producir conocimiento en un campo disciplinario y que también impacte positivamente en la sociedad \cite{aguirre}.
+En la dimensión social, el trabajo contribuirá a la realidad paraguaya, donde se estima que entre 45.000 y 130.000 personas podrían encontrarse dentro del espectro autista y donde el acceso a servicios diagnósticos especializados aún es limitado. El desarrollo de un sistema para la identificación temprana de señales de alerta contribuirá a reducir el tiempo entre la aparición de los primeros indicios y la derivación a un especialista, favoreciendo una orientación oportuna a las familias.
 
+Asimismo, se establecerá que el sistema constituirá una herramienta de apoyo al diagnóstico, siendo necesaria la evaluación y el criterio clínico de profesionales especializados para la confirmación del diagnóstico.
 \section{Impacto de la investigación}
-El impacto del trabajo de investigación se refiere a la diferencia producida en el contexto real entre los tiempos antes y después de la ejecución del trabajo, y que sea causado por dicho trabajo, directa o indirectamente. Los dos aspectos de este impacto que deben ser mencionados son el impacto ecológico entendido por un lado como la alteración de la relación humano-ambiente, y por otro, la alteración del aspecto social en que opera la relación humano-humano. 
+
+El Trastorno del Espectro Autista constituye una condición del neurodesarrollo que genera importantes implicaciones en los ámbitos social, educativo y sanitario, debido a su influencia en la comunicación, la interacción social, el aprendizaje y la participación en la sociedad. La Organización Mundial de la Salud reconoce que el autismo requiere intervenciones integrales que involucren los sistemas de salud, educación y apoyo social, con el propósito de mejorar la calidad de vida de las personas con TEA y de sus familias \cite{oms2024}.
+
+En este contexto, el trabajo propuesto se vinculará con la Agenda 2030 para el Desarrollo Sostenible, particularmente con aquellos objetivos que promueven la salud, la educación inclusiva y la reducción de desigualdades \cite{agenda2030}. La eventual implementación del sistema a ser desarrollado podrá contribuir a la generación de conocimiento útil para el diseño de políticas públicas, estrategias educativas y programas de intervención orientados a la inclusión social.
+
+En primer lugar, se establecerá relación con el ODS 3: Salud y Bienestar, cuyo propósito es garantizar una vida saludable y promover el bienestar para todas las personas. En Paraguay, uno de los principales desafíos en relación con el TEA se encuentra en el diagnóstico temprano y el acceso a servicios especializados, debido a la limitada disponibilidad de profesionales capacitados en áreas como neurología infantil, psicología clínica, psiquiatría infantil y terapias del desarrollo. En este sentido, la eventual implementación del sistema propuesto podrá contribuir a apoyar procesos de detección temprana, facilitando el acceso oportuno a la evaluación especializada dentro del sistema de salud.
+
+En segundo lugar, se identificará vinculación con el ODS 4: Educación de Calidad, que busca garantizar una educación inclusiva, equitativa y de calidad para todas las personas. En Paraguay, si bien se han desarrollado políticas orientadas a la inclusión educativa, muchas instituciones aún enfrentan dificultades para atender adecuadamente a estudiantes con TEA, debido a la escasez de recursos pedagógicos adaptados y la limitada formación especializada del profesorado. En este contexto, la eventual implementación del sistema podría aportar información relevante que contribuya a mejorar la comprensión de las necesidades educativas de estos estudiantes y favorecer el diseño de estrategias pedagógicas inclusivas.
+
+Asimismo, se establecerá relación con el ODS 10: Reducción de las Desigualdades, cuyo objetivo es disminuir las brechas sociales y promover la inclusión de todas las personas, incluyendo aquellas con condiciones del neurodesarrollo. En Paraguay, las personas con TEA y sus familias enfrentan barreras en el acceso a servicios de salud, oportunidades educativas y participación social. En este sentido, la eventual implementación del sistema podrá contribuir a visibilizar estas problemáticas y generar información que favorezca la formulación de políticas públicas orientadas a la igualdad de oportunidades.
+
+En conjunto, el trabajo propuesto se alineará con los principios del desarrollo sostenible, y su eventual implementación podrá contribuir al fortalecimiento de estrategias de salud, educación inclusiva e integración social de las personas con TEA en el contexto paraguayo.
 
 \section{Marco teórico}
-Esta sección abarca conceptualmente dos aspectos relacionados al marco que sirve de recipiente contenedor de la teoría que abarca y enmarca el tema de investigación: por un lado los conceptos e ideas fundamentales, y por otro los trabajos de otros autores que sirven de marco de referencia al trabajo, esto es, los antecedentes. Se debe evitar desarrollar aquí las ideas del trabajo propio que se está proyectando, limitándose a la exposición y discusión del estado de desarrollo actual de los conocimientos científicos y tecnológicos. A modo de referencia, en el  PTFG, el marco teórico debería extenderse aproximadamente a tres páginas, pero puede aumentar cuando hay muchos conceptos e ideas que plantear, de acuerdo con el tema.
 
-\subsection{Conceptos e ideas fundamentales}
-Definiciones y profundizaciones descriptivas de conceptos e ideas que expresan la realidad abordada. Aquí se debe describir con cierto detalle, como la exploración de la literatura lo posibilite, el marco teórico en que se encuadra el trabajo propuesto.
+\subsection{Trastorno del espectro autista }
+El Trastorno del Espectro Autista  es comprendido actualmente como una condición del neurodesarrollo de base neurobiológica y genética que se manifiesta en los primeros años de vida. De acuerdo con el Ministerio de Salud Pública y Bienestar Social, esta condición se define por una organización atípica de las funciones cerebrales que impacta severamente en la capacidad de comunicación social y en la flexibilidad del pensamiento y la conducta  \cite{mspbs2023}. 
+El marco técnico nacional destaca que la transición hacia el concepto de ``espectro'' permite integrar bajo un mismo paraguas clínico una amplia diversidad de manifestaciones. No obstante, todas comparten dos dimensiones nucleares: las deficiencias persistentes en la comunicación y la interacción social en diversos contextos, y la presencia de patrones de comportamiento, intereses o actividades restrictivas y repetitivas \cite{mspbs2023}. En Paraguay, se enfatiza que el TEA no es una enfermedad que requiera una ``cura'', sino una condición de vida que demanda apoyos específicos y ajustes del entorno para garantizar el ejercicio pleno de derechos de la persona \cite{ley6103_pnaitea_2018}.
 
-Muy importante: esta subsección debe estructurarse siguiendo la lógica de los ejes teóricos del tema abordado, dentro del área de conocimiento que lo contenga. A cada apartado dentro de la estructura construida debe corresponder un subnivel de títulos, cuidando de abrir un subnivel solo si este se compondrá de al menos dos tópicos, y evitando generar excesiva cantidad de niveles. Por ejemplo, si el tema del trabajo es una aplicación informática para testar transformadores eléctricos de potencia, hay como  mínimo dos ejes temáticos para teorizar: 1) las tecnologías de software con que puede desarrollarse la aplicación, y 2) las tecnologías involucradas en la construcción y el funcionamiento del transformador de potencia.
+\subsection{El Contexto de la Salud Pediátrica en Paraguay}~\\
 
-La presente plantilla sigue una estructura compatible con el modelo IMRyD: Introducción, Método, Resultado y Discusión. En ella; la definición del problema, más el enunciado de los objetivos y la revisión del marco teórico, representan la introducción al tema; luego la propuesta del método a seguir para obtener los objetivos marcan el final de recorrido del proyecto de trabajo, pues como plan de trabajo, es solo una hoja de ruta previa a la ejecución del plan; se debe recordar y evitar desarrollar el trabajo, más allá de la definición de las tareas y procedimientos, la identificación de las variables claves de la problemática, y la fundación de referentes con respecto a los cuales hacer las estimaciones de las variables \cite{aacp}.
+La detección del Trastorno del Espectro Autista (TEA) en Paraguay se fundamenta actualmente en un modelo de vigilancia del desarrollo que busca romper con la tradición del "diagnóstico por sospecha tardía". Bajo el marco de la Ley N° 6103/2018, el sistema de salud nacional ha pasado a reconocer que las desviaciones en el neurodesarrollo deben identificarse en la etapa de máxima plasticidad cerebral. Esto sitúa la relevancia de cualquier sistema de detección dentro de las Unidades de Salud de la Familia (USF) y los centros de atención primaria, donde el objetivo es captar señales de alerta antes de que las barreras sociales y comunicativas se consoliden.
 
-\textbf{\textit{Citas en el texto y referencias al final del documento del PTFG}}. Al final del documento se debe escribir la lista de referencias bibliográficas, vale decir, la lista de fuentes consultadas y citadas en el cuerpo del documento de Anteproyecto de Trabajo Final de Grado, la misma debe ceñirse a las especificaciones de la IEEE\footnote{IEEE: Insitute of Electrical and Electronics Engineers (Instituto de Ingenieros Eléctricos y Electrónicos).}, como se muestra al final de este documento; es decir, una lista numerada al final del artículo, ordenada por orden de cita en el cuerpo del documento \cite{ieee}.
+En la realidad paraguaya, la detección se enfrenta al desafío de la centralización de especialistas. Por ello, el marco teórico de un sistema tecnológico debe sustentarse en la capacidad de objetivar síntomas que, a menudo, son pasados por alto en consultas pediátricas breves. La normativa vigente (Decreto N° 3624/20) respalda la implementación de protocolos que permitan una derivación oportuna a centros de mayor complejidad como el Hospital Pediátrico Niños de Acosta Ñu, asegurando que el proceso de identificación sea el primer eslabón de una cadena de intervención integral \cite{decreto3624_reglamento_2020}.
+
+\subsection{Síntomas del Trastorno del Espectro Autista}~\\
+
+Uno de los principales grupos de síntomas del TEA corresponde a las dificultades en la interacción social. Estas pueden manifestarse como una limitada capacidad para establecer relaciones con otras personas, escaso contacto visual, dificultad para comprender normas sociales y poca respuesta emocional hacia los demás. En Paraguay, especialistas señalan que estas dificultades pueden observarse desde la infancia, incluyendo la falta de apego o la escasa búsqueda de atención por parte de los cuidadores \cite{diariohoy_autismo_2025}.
+
+Otro conjunto importante de síntomas se relaciona con la comunicación. Las personas con TEA pueden presentar retrasos en el desarrollo del lenguaje, dificultades para iniciar o mantener conversaciones, o utilizar formas atípicas de comunicación como la ecolalia (repetición de palabras o frases). En algunos casos, incluso pueden no responder a estímulos verbales, lo que genera la percepción errónea de problemas auditivos .
+
+Asimismo, el TEA se caracteriza por la presencia de comportamientos repetitivos e intereses restringidos. Estos pueden incluir movimientos estereotipados, como girar sobre sí mismos o manipular objetos de forma repetitiva, así como una fuerte resistencia a los cambios en la rutina. Esta rigidez conductual puede generar ansiedad intensa ante situaciones nuevas o imprevistas.
+
+Otro aspecto relevante dentro de los síntomas es la alteración en el procesamiento sensorial. Las personas con TEA pueden mostrar hipersensibilidad o hiposensibilidad a estímulos como sonidos, luces, texturas o dolor. Esto puede influir en su comportamiento diario, generando respuestas inusuales o evitación de ciertos entornos 
+
+Es importante destacar que los síntomas del TEA aparecen en las primeras etapas del desarrollo, generalmente antes de los 2 o 3 años de edad, aunque en algunos casos pueden hacerse más evidentes cuando las demandas sociales aumentan. En Paraguay, se ha observado que la detección suele ser tardía en comparación con otros países, lo que puede retrasar la intervención temprana y afectar el desarrollo del niño .
+
+Finalmente, cabe resaltar que el TEA es un espectro, lo que significa que los síntomas varían ampliamente en tipo e intensidad entre individuos. Algunas personas pueden presentar síntomas leves y llevar una vida relativamente independiente, mientras que otras requieren apoyo significativo. Esta variabilidad hace necesario un enfoque diagnóstico individualizado y multidisciplinario \cite{mspbs2023}.
+
+Se describen signos de alarma para sospechar alteraciones del desarrollo infantil, los cuales pueden ser identificados en diferentes etapas tempranas de la vida (ver Tabla 1).
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+
+\caption{Signos de alarma de alteración del desarrollo \cite{mspbs2023}}
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{2.5cm}|p{11.5cm}|}
+\hline
+\textbf{EDAD} & \textbf{ALARMA} \\
+\hline
+
+\textbf{6 MESES} &
+No trata de agarrar cosas que están a su alcance, no mira a la madre durante la lactancia. \newline
+No demuestra afecto por quienes le cuidan. \newline
+No reacciona ante los sonidos a su alrededor. \newline
+Tiene dificultad para llevarse cosas a la boca. \newline
+No emite sonidos (vocales: ``a'', ``e'', ``o''). \newline
+No gira en ninguna dirección (rueda). \newline
+No se ríe ni hace sonidos de placer al ser estimulado por sus cuidadores frecuentes. \newline
+Se ve rígido y con los músculos tensos. \newline
+Se ve sin fuerza como un muñeco de trapo. \\
+\hline
+
+\textbf{12 MESES} &
+No gatea. \newline
+No puede permanecer de pie con ayuda. \newline
+No busca un objeto que se le esconde. \newline
+No dice palabras sencillas como ``mamá'' o ``papá''. \newline
+No aprende a usar gestos como saludar con la mano o mover la cabeza. \newline
+No señala cosas. \\
+\hline
+
+\textbf{18 MESES} &
+Pierde habilidades que había adquirido. \newline
+No señala cosas para mostrarlas a otras personas. \newline
+No puede caminar solo. \newline
+No sabe para qué sirven las cosas familiares. \newline
+No imita lo que hacen las demás personas. \newline
+No aprende nuevas palabras. \newline
+No sabe por lo menos 6 palabras. \newline
+No se da cuenta ni parece importarle si la persona que le cuida se va o regresa. \\
+\hline
+
+\textbf{2 AÑOS} &
+Pierde habilidades que había adquirido. \newline
+No usa frases de dos palabras. \newline
+No conoce el uso de objetos cotidianos. \newline
+No imita acciones o palabras. \newline
+No sigue instrucciones simples. \\
+\hline
+
+\textbf{3 AÑOS} &
+Se cae mucho o tiene problemas para subir y bajar escaleras. \newline
+No se le entiende cuando habla. \newline
+No sabe utilizar juguetes sencillos. \newline
+No usa oraciones para hablar. \newline
+No entiende instrucciones sencillas. \newline
+No imita ni usa la imaginación en sus juegos. \\
+\hline
+
+\textbf{4 AÑOS} &
+No salta en un solo pie. \newline
+No muestra interés en juegos interactivos o de imaginación. \newline
+Ignora a otros niños o no responde a personas fuera de la familia. \newline
+No puede relatar su cuento favorito. \newline
+No sigue instrucciones de 3 acciones. \newline
+No entiende lo que quieren decir ``igual'' y ``diferente''. \newline
+No usa correctamente las palabras ``yo'' y ``tú''. \newline
+No habla claro. \newline
+Pierde habilidades que había adquirido. \\
+\hline
+
+\end{tabular}
+}
+\end{table}
+\textbf{Fuente:} Ministerio de Salud Pública y Bienestar Social, Protocolo para la atención del trastorno del espectro autista en Paraguay, 2023.
+\subsection{Inteligencia Artificial}
+\subsubsection{Definición y fundamentos}
+La Inteligencia Artificial se definirá como el campo de la ciencia computacional dedicado al desarrollo de sistemas capaces de realizar tareas que tradicionalmente requerirían de la inteligencia humana, tales como el razonamiento, el aprendizaje y la percepción visual \cite{russell_norvig_ai_2020}. En el ámbito de la ingeniería, la IA presentará una evolución significativa, pasando de sistemas basados en reglas lógicas hacia modelos capaces de extraer conocimiento directamente a partir de los datos \cite{mitchell_ml_1997}. Esta transformación permitirá que la disciplina deje de depender de heurísticas rígidas y se consolide como un marco robusto de aprendizaje estadístico y computacional.
+\subsubsection{ Ramas de la IA aplicadas a la ingeniería}
+Actualmente, la Inteligencia Artificial se dividirá en diversas áreas de especialización, destacándose el Aprendizaje Automático (Machine Learning) y el Aprendizaje Profundo (Deep Learning) como las ramas de mayor impacto en la ingeniería moderna. Estos enfoques permitirán a los sistemas no solo procesar información, sino también aprender de grandes volúmenes de datos y generalizar soluciones a partir de patrones complejos \cite{goodfellow_dl_2016}. En el área de la salud, estas capacidades facilitarán la identificación de biomarcadores y patrones conductuales que resultarán imperceptibles mediante métodos tradicionales, posicionando a la IA como una herramienta clave de apoyo en el diagnóstico clínico \cite{sherkatghanad_autism_2020}.
+
+
+\subsection{Aprendizaje automático}
+\subsubsection{ Definición y fundamentos}
+El Aprendizaje Automático constituirá una subdisciplina fundamental dentro del campo de la Inteligencia Artificial, cuyo propósito será desarrollar modelos capaces de aprender patrones a partir de datos sin ser programados de forma explícita para cada tarea. En este sentido, los algoritmos permitirán identificar relaciones complejas dentro de grandes volúmenes de información, facilitando la automatización de procesos de análisis y toma de decisiones \cite{bishop_prml_2006}.
+Los fundamentos del aprendizaje automático se basarán en el uso de datos de entrada, modelos matemáticos y procesos de entrenamiento mediante los cuales el sistema ajustará sus parámetros internos con el objetivo de minimizar el error. Este proceso implicará el uso de funciones de pérdida y algoritmos de optimización, así como técnicas de validación para garantizar la capacidad de generalización del modelo frente a datos no vistos previamente \cite{goodfellow_dl_2016_v2}.
+Asimismo, se considerarán aspectos clave como la calidad de los datos, el preprocesamiento, la selección de características y la evaluación del rendimiento mediante métricas específicas, factores que influirán directamente en la eficacia del modelo desarrollado.
+
+\subsubsection{ Aprendizaje supervisado}
+El aprendizaje supervisado representará uno de los enfoques más utilizados dentro del aprendizaje automático, caracterizándose por el uso de datos previamente etiquetados. En este tipo de aprendizaje, el modelo será entrenado a partir de pares de entrada y salida esperada, permitiendo que el sistema aprenda a predecir resultados en función de nuevos datos \cite{bishop_prml_2006}.
+Dentro de este enfoque, se emplearán técnicas de clasificación y regresión. En el contexto del presente estudio, se priorizarán los modelos de clasificación, ya que permitirán determinar la presencia o ausencia de características asociadas al TEA.
+El proceso de entrenamiento incluirá la división del conjunto de datos en subconjuntos de entrenamiento y prueba, así como la validación del modelo mediante métricas como precisión, sensibilidad (recall), especificidad y F1-score. Estas métricas permitirán evaluar la capacidad del sistema para identificar correctamente patrones conductuales relevantes \cite{goodfellow_dl_2016_v2}.
+
+\subsubsection{ Aplicación en diagnóstico clínico}
+El aprendizaje automático será aplicado en el ámbito del diagnóstico clínico como una herramienta de apoyo para la detección temprana de diversas condiciones, incluyendo el Trastorno del Espectro Autista. En este contexto, los modelos permitirán analizar datos complejos, como videos de comportamiento, con el objetivo de identificar patrones que podrían no ser fácilmente perceptibles mediante la observación humana \cite{murphy_ml_2012}.
+En el presente trabajo, se propondrá la utilización de modelos basados en redes neuronales profundas, incluyendo arquitecturas híbridas que integren redes convolucionales y recurrentes, lo que permitirá procesar información espacial y temporal de manera conjunta. Esto facilitará el análisis de gestos, movimientos repetitivos y patrones de interacción social presentes en los videos \cite{who_ai_healthcare_2021}.
+La implementación de estas técnicas contribuirá a mejorar la precisión y objetividad en el proceso de evaluación clínica, sirviendo como complemento a los métodos tradicionales de diagnóstico. Sin embargo, se considerará que estos sistemas no reemplazarán la intervención de profesionales de la salud, sino que actuarán como herramientas de apoyo en la toma de decisiones clínicas \cite{estudios_ml_tea}.
+
+
+\subsection{Visión artificial}
+
+\subsubsection{Definición y evolución}
+ La Visión Artificial (Computer Vision) se define como un campo interdisciplinario de la Inteligencia Artificial que busca otorgar a los sistemas computacionales la capacidad de adquirir, procesar, analizar y comprender el contenido visual del mundo real a partir de imágenes digitales y secuencias de video \cite{szeliski_cv_2022_v2}. En el ámbito de la ingeniería, esta disciplina presenta una evolución significativa, pasando de enfoques tradicionales basados en el diseño manual de algoritmos matemáticos complejos para la extracción de características visuales como la detección de bordes o formas geométricas hacia la implementación de arquitecturas de aprendizaje profundo, las cuales permiten la extracción automatizada de representaciones visuales de alto nivel \cite{forsyth_ponce_cv_2011_v2}.
+\subsubsection{Aplicación en análisis de comportamiento}
+ En el contexto clínico y del análisis de comportamiento, la Visión Artificial se consolidará como una herramienta tecnológica fundamental para el soporte diagnóstico. En tareas de reconocimiento de acciones motoras, los sistemas analizarán flujos de video en tiempo real con el objetivo de estimar la postura corporal del individuo y rastrear la evolución dinámica de sus movimientos \cite{voulodimos_cv_review_2018}. Mediante el uso de redes neuronales especializadas, será posible procesar estos datos para identificar, cuantificar y analizar biomarcadores y patrones repetitivos que podrían no ser perceptibles mediante la observación humana convencional, transformando la evaluación en un proceso objetivo, estandarizado y escalable \cite{ibm_cv_2023}.
+
+
+\subsection{Arquitectura Híbrida CNN-LSTM para Reconocimiento de Patrones}
+
+\subsubsection{Fundamentos de la Combinación Espacio-Temporal}
+
+A diferencia de las imágenes estáticas, el video será considerado como una secuencia de fotogramas ordenados cronológicamente. Para detectar patrones como giros o balanceos, no será suficiente analizar una imagen aislada; será necesario observar la evolución de la postura en el tiempo. Modelos como las Redes Convolucionales Recurrentes a Largo Plazo (LRCN) demostrarán ser altamente efectivos para esta tarea, ya que permitirán procesar características visuales y secuenciales de forma simultánea \cite{orozco_cnnlstm_2021_v2}. 
+
+\subsubsection{Extracción de Características con CNN (Capa Espacial)}
+
+En la primera etapa, cada fotograma del video será procesado individualmente por una Red Neuronal Convolucional (CNN). En arquitecturas de clasificación de video a gran escala, la CNN actuará como un extractor automático de características. Mediante operaciones matemáticas de convolución y agrupación (pooling), la red identificará puntos clave como:
+\begin{itemize}
+    \item \textbf{Bordes y silueta:} aislará el cuerpo del infante del fondo.
+    \item \textbf{Postura:} determinará la posición de las extremidades y la orientación de la cabeza.
+\end{itemize}
+En esta fase, el modelo generará un vector de características unidimensionales por cada instante de tiempo, eliminando información irrelevante del entorno \cite{martinsanz_dl_2018_v2}.
+
+\subsubsection{Procesamiento de Secuencias con LSTM (Capa Temporal)}
+
+Los vectores espaciales generados por la CNN serán entregados en orden cronológico a la red LSTM. Esta red recurrente será diseñada para modelar dependencias a largo plazo y mitigar el problema del desvanecimiento del gradiente.
+
+En el contexto del TEA, la LSTM analizará la periodicidad de los movimientos. Si los vectores indican posiciones repetitivas de manera rítmica a lo largo de varios cuadros, la red identificará estos patrones como comportamientos estereotipados, como el aleteo de manos. Su arquitectura de ``puertas de olvido'' permitirá descartar movimientos esporádicos y centrarse en patrones relevantes \cite{patterson_gibson_dl_2024_v2}. 
+
+\subsubsection{Flujo de Datos y Clasificación de Patrones Conductuales}
+
+El flujo de la arquitectura culminará en una capa densamente conectada con una función de activación, como Softmax. Esta capa recibirá el resumen temporal generado por la LSTM y calculará una probabilidad estadística. Como resultado, el sistema emitirá un porcentaje de confianza que indicará si la secuencia de video corresponderá a un patrón conductual típico o a un marcador motor asociado al autismo, sirviendo como herramienta de apoyo para el especialista clínico \cite{bishop_reconocimiento_2006_v2}. 
+
+\subsection{Diseño web}
+\subsubsection{Interfaz de Usuario y Arquitectura de Integración Web}
+
+La efectividad de un sistema de detección temprana del Trastorno del Espectro Autista (TEA) no dependerá únicamente de la precisión del modelo de inteligencia artificial, sino también de la calidad de la interacción entre el usuario y la plataforma. En este contexto, la interfaz web será concebida como un componente esencial que permitirá la integración eficiente entre el especialista clínico y el motor de inferencia basado en redes CNN-LSTM.
+
+El sistema web será diseñado para gestionar de manera estructurada el flujo de datos, desde la carga de secuencias de video hasta la visualización de resultados interpretables. Esta integración permitirá que el usuario pueda utilizar la herramienta sin requerir conocimientos técnicos avanzados en inteligencia artificial, facilitando su adopción en entornos clínicos y educativos.
+
+Además, la arquitectura de la plataforma priorizará la usabilidad, accesibilidad y eficiencia, aspectos fundamentales en sistemas de apoyo a la toma de decisiones médicas, donde la claridad en la presentación de la información influye directamente en la interpretación de los resultados \cite{iso_iec_25010_2011_v2}.
+
+\subsubsection{Arquitectura del Lado del Cliente (Frontend)}
+
+El frontend será desarrollado bajo un enfoque basado en componentes reutilizables, empleando tecnologías modernas como Next.js, que permiten optimizar el rendimiento mediante renderizado híbrido (SSR y CSR). Este enfoque será clave para mejorar los tiempos de carga y garantizar una experiencia de usuario fluida, especialmente al trabajar con archivos multimedia de gran tamaño como videos.
+
+La interfaz estará diseñada específicamente para soportar el flujo de trabajo del sistema de detección de TEA, permitiendo al usuario:
+
+\begin{itemize}
+    \item Cargar videos de comportamiento infantil de manera sencilla e intuitiva.
+    \item Visualizar el estado del procesamiento en tiempo real.
+    \item Recibir retroalimentación clara durante el análisis.
+    \item Acceder a los resultados generados por el modelo.
+\end{itemize}
+
+Asimismo, el sistema gestionará procesos asíncronos relacionados con la carga y análisis de videos, utilizando técnicas de manejo de estado que permitan informar al usuario sobre el progreso del procesamiento. Esto resulta fundamental considerando que los modelos de aprendizaje profundo, como CNN-LSTM, requieren tiempos de inferencia variables dependiendo de la longitud del video \cite{goodfellow_dl_2016_v2}.
+
+El diseño de la interfaz priorizará la simplicidad y claridad visual, reduciendo la carga cognitiva del usuario y facilitando la interpretación de los resultados obtenidos.
+
+\subsubsection{Comunicación y Servicios de Red (Backend)}
+
+La comunicación entre el frontend y el sistema de inteligencia artificial se implementará mediante una arquitectura cliente-servidor basada en el estilo REST (Representational State Transfer), ampliamente utilizado en aplicaciones web modernas por su escalabilidad y simplicidad.
+
+El backend será desarrollado utilizando FastAPI, un framework de alto rendimiento para la construcción de APIs, que permitirá gestionar de manera eficiente las solicitudes de procesamiento de video. Este componente actuará como un intermediario entre la interfaz de usuario y el modelo CNN-LSTM, organizando el flujo de datos en diferentes etapas:
+
+\begin{enumerate}
+    \item Recepción del video cargado por el usuario.
+    \item Preprocesamiento de los datos (extracción de fotogramas, normalización, etc.).
+    \item Envío de los datos al modelo CNN para la extracción de características espaciales.
+    \item Procesamiento secuencial mediante la red LSTM.
+\end{enumerate}
+
+Este enfoque desacoplado permitirá que el modelo de inteligencia artificial evolucione independientemente del sistema web, facilitando futuras mejoras en términos de precisión, escalabilidad y mantenimiento del sistema \cite{bass_architecture_2012_v2}.
+
+\subsubsection{Gestión de Seguridad y Privacidad de Datos}
+
+Dado que el sistema trabajará con datos sensibles relacionados con menores de edad, la seguridad y privacidad serán aspectos críticos en su diseño. En este sentido, se implementarán mecanismos de autenticación y autorización que restringirán el acceso únicamente a usuarios autorizados, como profesionales de la salud o investigadores.
+
+Asimismo, se establecerán políticas de protección de datos que garanticen la confidencialidad de la información, incluyendo el almacenamiento seguro de los videos y resultados generados. Este enfoque será coherente con principios internacionales de protección de datos y ética en sistemas de salud digital  \cite{who_ai_health_2021_v2}.
+
+Además, se considerará la trazabilidad de las operaciones realizadas en el sistema, permitiendo registrar el acceso y uso de la información, lo cual es fundamental en contextos clínicos donde la transparencia y la responsabilidad son requisitos esenciales.
+
+\subsubsection{Visualización de Resultados y Diseño de Interacción}
+
+La visualización de resultados constituirá una de las etapas más importantes del sistema, ya que permitirá traducir la salida del modelo CNN-LSTM en información comprensible para el especialista. En este sentido, el diseño de la interacción estará orientado a facilitar la interpretación de patrones conductuales detectados en los videos.
+
+El sistema presentará los resultados mediante diferentes elementos visuales, tales como:
+
+\begin{itemize}
+    \item Cargar videos de comportamiento infantil de manera sencilla e intuitiva.
+    \item Visualizar el estado del procesamiento en tiempo real.
+    \item Recibir retroalimentación clara durante el análisis.
+    \item Acceder a los resultados generados por el modelo.
+\end{itemize}
+
+Este enfoque permitirá al usuario correlacionar los resultados del modelo con evidencia visual directa, fortaleciendo la confianza en el sistema y mejorando la toma de decisiones clínicas.
+
+Además, el uso de técnicas de visualización interactiva contribuirá a reducir la ambigüedad en la interpretación de los resultados, transformando datos complejos en información clara y accesible \cite{ware_infovis_2013_v2}.
+
+De esta manera, el sistema no solo funcionará como una herramienta automatizada, sino como un soporte inteligente que complementará el criterio del especialista en la detección temprana del TEA.
 
 \subsection{Antecedentes}
-Estudios y experiencias previas que se relacionan con el tema investigado y resumen de los hallazgos más importantes que ayudan a configurar el estado científico-técnico actual, en el área de la problemática tratada. Solo deben abarcarse hitos que jalonan la línea histórica hasta llegar al estado actual, y trabajos antecedentes que por su enfoque guardan relación próxima con el trabajo que se proyecta hacer, y se debe explicar qué relación guardan con el tema del trabajo propuesto. La exposición teórica debe discurrir desde lo más antiguo hacia lo actual y desde lo más amplio hacia el tema específico del trabajo. Al final esta revisión debe posibilitar averiguar el estado de conocimiento actual y en qué medida responde a las preguntas emanadas de la definición del problema \cite{sampieri}; obviamente, la respuesta solo puede ser parcial o nula para que amerite la realización de la investigación propuesta.
+El trabajo presentado por investigadores de instituciones académicas y centros de investigación en China propone un enfoque basado en aprendizaje profundo para la detección del TEA mediante el análisis de videos de niños realizando tareas estructuradas, como el armado de bloques. El objetivo principal de este estudio es identificar patrones conductuales característicos del autismo a partir de la forma en que los niños interactúan con los objetos, observando aspectos como la repetición de acciones, la organización espacial y las estrategias utilizadas durante la actividad. La metodología empleada se basa en el uso de modelos de redes neuronales profundas que permiten analizar tanto la información visual de cada cuadro como la evolución temporal del comportamiento durante la ejecución de la tarea.
+
+Los resultados del estudio muestran que este tipo de enfoque permite detectar diferencias significativas entre niños con y sin TEA, ya que los patrones de interacción con los bloques evidencian comportamientos repetitivos, rigidez en la ejecución o dificultades en la planificación. Además, se destaca que la combinación de modelos capaces de capturar características espaciales y temporales mejora la precisión del sistema en la identificación de estos patrones conductuales \cite{vaswani_attention_2024_v2}.
+Este antecedente es relevante, ya que demuestra la efectividad del uso de videos y técnicas de aprendizaje profundo para la detección del autismo, especialmente en contextos controlados donde se analizan tareas específicas. Asimismo, aporta una base importante para la identificación de patrones conductuales repetitivos, los cuales son fundamentales en la presente investigación.
+
+Sin embargo, el trabajo analizado se enfoca en el estudio del comportamiento de los niños dentro de una tarea específica como el armado de bloques en un entorno controlado, mientras que la presente investigación propone el desarrollo de un sistema web de detección del TEA mediante el análisis de videos en un contexto más general, buscando identificar patrones conductuales repetitivos en diferentes situaciones, lo que amplía su aplicabilidad en entornos reales.
+
+Siguiendo esta misma línea de investigación, pero incorporando tecnologías inmersivas, el trabajo desarrollado en la Universidad Politècnica de València plantea el uso de inteligencia artificial combinada con entornos de realidad virtual para la detección temprana del TEA. El objetivo principal de este estudio es evaluar el comportamiento de los niños en escenarios simulados que permiten controlar estímulos y situaciones específicas, facilitando la observación de respuestas conductuales ante diferentes contextos sociales y cognitivos. La metodología se basa en la creación de entornos virtuales interactivos en los cuales los niños realizan diversas actividades diseñadas para estimular la comunicación, la atención y la interacción social, mientras se registran datos relacionados con sus movimientos y respuestas. 
+
+Posteriormente, estos datos son analizados mediante algoritmos de inteligencia artificial para identificar patrones asociados al autismo.
+
+Los resultados obtenidos en esta investigación muestran que el uso de entornos virtuales permite una evaluación más controlada y precisa del comportamiento infantil, mejorando los niveles de detección en comparación con métodos tradicionales basados en observación clínica . 
+
+Además, se destaca que la automatización del análisis reduce la subjetividad del diagnóstico y permite identificar patrones conductuales sutiles que pueden pasar desapercibidos en evaluaciones convencionales \cite{pintle_patrones_2018_v2}. Este antecedente aporta una perspectiva complementaria al presente trabajo, al demostrar la efectividad del uso de tecnologías avanzadas para la detección del TEA. No obstante, su enfoque se centra en escenarios simulados y controlados, mientras que la presente investigación propone el análisis de videos en contextos reales mediante un sistema web, lo que amplía la accesibilidad y aplicabilidad de la solución propuesta.
+En este mismo contexto de análisis del comportamiento, el trabajo desarrollado por Gloria Ivonne Monarca Pintle en el Centro de Investigación Científica y de Educación Superior de España presenta un enfoque innovador basado en el estudio de patrones gestuales a través de la interacción con interfaces físicas, específicamente superficies elásticas sensibles al tacto. El objetivo principal de esta investigación es identificar marcadores conductuales del TEA mediante el análisis de la forma en que los niños interactúan con este tipo de interfaces, considerando variables como la fuerza aplicada, la duración del contacto, la velocidad del movimiento y la precisión en la ejecución de los gestos. La metodología incluye el desarrollo de un sistema experimental en el cual los niños realizan actividades específicas sobre la superficie, mientras se registran datos cuantitativos que posteriormente son analizados mediante algoritmos de aprendizaje automático para clasificar los patrones de comportamiento \cite{pintle_deteccion_2018_v2}.
+
+Los resultados obtenidos evidencian que existen diferencias claras entre los patrones gestuales de niños con TEA y niños neurotípicos, alcanzando niveles de precisión cercanos al 97\% en la clasificación de los sujetos. En particular, se observa que los niños con autismo tienden a realizar movimientos más repetitivos, con menor variabilidad, menor fuerza y mayor duración, lo que constituye un indicador relevante para su identificación. Este antecedente resulta altamente significativo, ya que demuestra que el análisis del comportamiento motor también puede ser una vía efectiva para la detección del TEA. Sin embargo, el enfoque se limita a un entorno experimental con dispositivos específicos, lo que restringe su uso en contextos cotidianos.
+En conjunto, estos antecedentes evidencian que la detección del Trastorno del Espectro Autista puede abordarse desde múltiples perspectivas tecnológicas, incluyendo el análisis de video, la realidad virtual y la interacción física. Todos coinciden en la importancia de identificar patrones conductuales como indicador clave del TEA. No obstante, la mayoría de estos enfoques se desarrollan en entornos controlados o requieren dispositivos especializados. En este sentido, la presente investigación se diferencia al proponer una solución basada en un sistema web accesible que utiliza modelos híbridos CNN-LSTM para el análisis de videos en contextos más naturales, ampliando así su aplicabilidad y contribuyendo al desarrollo de herramientas más accesibles para la detección temprana del autismo.
+
 
 \section{Método}
-El proceso de TFG se enmarca dentro del tipo de investigación formativa en el área de estudio de la carrera del graduando, guiado por tutor y sujeto a plazos académicos definidos. No obstante, se prevé la posibilidad de que el estudiante aventajado sea capaz de absorber el conocimiento necesario e incluso efectuar algún aporte de conocimiento al área de estudio en que desarrolla su TFG, la historia registra muchos casos afortunados en este sentido.
+Desde el enfoque metodológico, se enmarcará como aplicada y de desarrollo tecnológico, con enfoque cuantitativo y alcance descriptivo-evaluativo. La propuesta buscará construir y evaluar un prototipo web capaz de analizar secuencias de video para identificar patrones conductuales repetitivos asociados al Trastorno del Espectro Autista mediante una arquitectura CNN-LSTM.
+El análisis se centrará en tres conductas visualmente observables: aleteo de manos, balanceo corporal y movimientos repetitivos de cabeza. Estas conductas serán consideradas como clases de análisis dentro del modelo, sin que ello implique la emisión de un diagnóstico clínico definitivo. El sistema funcionará como una herramienta de apoyo para el registro y análisis preliminar de patrones conductuales.
+La evaluación se realizará mediante métricas técnicas de desempeño, como precisión, recall y F1-score, además de pruebas funcionales del prototipo web. Estas pruebas permitirán verificar la carga de videos, el procesamiento de fotogramas, la integración del modelo y la presentación de resultados al usuario. 
 
-Se inicia la planificación del trabajo propuesto, enfatizando aspectos predeterminados que devienen de la naturaleza de la problemática abordada. La naturaleza del trabajo propuesto puede ser básica o aplicada. En la investigación básica se pretende ampliar y profundizar el conocimiento de la realidad, vale decir, su objeto es la generación de conocimiento objetivo (enfoque científico). En la investigación aplicada se emplea conocimiento científico consolidado para obtener producto o servicio, acorde con el interés subjetivo del investigador (enfoque tecnológico).
 
 \subsection{Especificaciones de diseño}
-Partiendo de estas premisas, la caracterización del trabajo de investigación depende fundamentalmente de si se trata de investigación básica o aplicada. La diferencia marcante entre ambos tipos de trabajo se encuentra en lo que cada uno produce. La investigación básica genera dato y/o conocimiento científico, es decir, descubre lo que ya antes había. La investigación aplicada genera invento, es decir, genera algo nuevo; por lo tanto, tiene efecto transformador sobre la realidad. El concepto clave de la investigación básica es: \textit{descubrimiento}; en cambio, el concepto clave de la investigación aplicada es: \textit{invento}, también denominado \textit{innovación}. En este contexto, al tiempo de caracterizar el trabajo de investigación propuesto como TFG, se parte por decir y fundamentar el tipo de investigación de que se trata, a partir de ahí, hay una bifurcación esencial entre los métodos, determinada por el tipo de trabajo, según sea de investigación básica o aplicada.
+ La especificación del diseño metodológico se orientará al desarrollo de un prototipo web de apoyo para la identificación de patrones conductuales asociados al Trastorno del Espectro Autista mediante una arquitectura CNN-LSTM. El sistema analizará secuencias de video con el propósito de reconocer tres conductas repetitivas visualmente observables: aleteo de manos, balanceo corporal y movimientos repetitivos de cabeza, conforme a la delimitación planteada en el anteproyecto.
+El diseño será no experimental, debido a que no se intervendrá sobre pacientes ni se modificarán condiciones clínicas. El análisis se realizará a partir de videos previamente seleccionados y etiquetados, los cuales servirán como fuente de datos para el entrenamiento y evaluación del modelo. Por tanto, la propuesta no buscará establecer un diagnóstico clínico definitivo, sino apoyar la identificación preliminar de patrones conductuales que puedan orientar una posterior evaluación profesional.
+Desde el punto de vista técnico, el diseño contemplará cinco componentes principales: organización del conjunto de videos, preprocesamiento de fotogramas, construcción del modelo CNN-LSTM, evaluación del desempeño e integración del modelo en una plataforma web. En la primera etapa, los videos serán clasificados según la conducta predominante observada. Posteriormente, se extraerán fotogramas, se normalizarán las imágenes y se prepararán las secuencias para su procesamiento computacional.
+La arquitectura CNN-LSTM será utilizada porque permite combinar el análisis espacial y temporal de los videos. La red CNN extraerá características visuales de cada fotograma, como postura, posición de manos, cabeza y cuerpo. Luego, la red LSTM procesará la secuencia temporal de esas características para identificar patrones repetitivos a lo largo del video.
 
-\subsubsection{Investigación básica}
-Con la investigación básica se pretende ampliar y profundizar el conocimiento de la realidad. Para lograr generar conocimiento se ponen en práctica las dos operaciones racionales básicas: inducción y deducción. Dependiendo de la problemática, puede resultar que el método sea inductivo, o deductivo, o hipotético deductivo. Es inductivo si se prevé utilizar premisas particulares para llegar a una conclusión general. Es deductivo si se prevé usar principios generales para llegar a una conclusión específica. Es hipotético deductivo cuando se combinan: inducción, bajo la forma de inferencia de hipótesis; con deducción, bajo la forma de identificación experimental de casos hipotetizados \cite{arrieta}. 
+El desempeño del modelo será evaluado mediante métricas cuantitativas de clasificación, tales como precisión, recall y F1-score. 
 
-La investigación básica puede ser cualitativa o cuantitativa, como casos extremos de una taxonomía basada en la relación natural entre lo conceptual y su intensidad conceptual. Si predominan exploraciones orientadas conceptualizar el objeto tratado, supeditando la cuantificación de sus intensidades, el enfoque es cualitativo. Si predominan estimaciones cuantificadas de uno o más conceptos del objeto tratado, supeditando la conceptualización de los mismos, entonces el enfoque es cuantitativo. Son frecuentes los trabajos en cuyos métodos se encuentran elementos conceptuales que son estimados cuantitativamente, vale decir, trabajos de investigación mixta cuali-cuantitativa.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{aut.png}
+    \caption{Arquitectura funcional para el prototipo web de apoyo a la identificación de patrones conductuales.}
+    \label{fig:web_tea}
+\end{figure}
+\textbf{Fuente: Elaboración propia mediante herramientas de inteligencia artificial.}
 
-El nivel de profundidad del trabajo de investigación se refiere a la intensidad del esfuerzo por extraer una imagen epistémica fidedigna del fenómeno real tratado. A partir de la información proveída y del análisis y revisión de la literatura hecha, se debe especificar el nivel de profundidad del TFG propuesto. Se distinguen los siguientes niveles de profundidad del trabajo de investigación, por orden de complejidad:
+La Figura 1 presenta la arquitectura funcional propuesta para el sistema web de apoyo a la identificación de patrones conductuales asociados al Trastorno del Espectro Autista. El flujo inicia en el cliente o frontend, donde el usuario podrá cargar secuencias de video y visualizar el estado del procesamiento y los resultados generados por el sistema.
+Posteriormente, las solicitudes serán enviadas al backend mediante servicios REST. Este componente se encargará de recibir los videos, ejecutar el preprocesamiento necesario y enviar los datos preparados al motor de inferencia. El modelo de inteligencia artificial estará basado en una arquitectura híbrida CNN-LSTM, en la cual la CNN extraerá características espaciales de los fotogramas y la LSTM analizará la secuencia temporal para identificar patrones conductuales repetitivos.
+Los resultados técnicos generados por el modelo serán devueltos al sistema web para su visualización. La plataforma podrá presentar la conducta identificada, el nivel de confianza y, en caso de implementarse, los segmentos temporales donde se detecte el patrón conductual. Asimismo, se considerará el almacenamiento seguro de videos y resultados, atendiendo a criterios de confidencialidad y protección de datos.
+La validación del funcionamiento del sistema deberá ser realizada por un profesional vinculado al área del TEA, como un especialista en salud mental, pediatría, neurología infantil, psicología clínica o desarrollo infantil. Esta validación tendrá carácter preliminar y no reemplazará el diagnóstico clínico profesional.
 
-\begin{enumerate}
-\item Exploratorio: a este nivel de profundidad el investigador se limita a la información consolidadea disponible sobre el objeto, vale decir, se circunscribe a lo que dispone en fuentes secundarias. Equivale a una revisión del estado de la ciencia sobre el tema. El trabajo genera una monografía, vale decir, una compilación de literatura técnica temática, y puede servir como paso previo para un diseño de estudio más profundo del contexto problemático.
 
-\item Descriptivo: a este nivel de profundidad del análisis se toma contacto directo con el objeto de la investigación, mínimamente, a través de su observación. Es frecuente en la investigación de ciencias antropológicas. A su vez sirve como fuente de datos de entrada para un tratamiento más profundo del objeto. La importancia del trabajo descriptivo se pone de manifiesto al reconocerlo como vía para construir estadística acumulativa que alberga patrones de regularidad, que luego están disponibles para inferir hipótesis por razonamiento inductivo, eventualmente probarlas y aportar conocimiento científico.
 
-\item Correlacional: a este nivel de profundidad del análisis se averigua en qué grado dos variables se encuentran relacionadas. Cuando el estudio correlacional indica que las unidades de análisis que asumen valores altos en una de las variables, también asumen valores altos en la otra variable; y que las unidades de análisis que asumen valores bajos en una de las variables, también asumen valores bajos en la otra variable; entonces, estos resultados indican una correlación positiva. Cuando la relación es inversa: cuando las unidades de análisis que asumen valores altos en una de las variables, asumen valores bajos en la otra variable, y viceversa, esto indica una correlación negativa. La correlación entre las variables puede expresarse en términos de una relación lineal representada por una recta de regresión, i.e., $y = a +bx$; y puede ser estimada por estadísticos conocidos como coeficientes de correlación, por ej. el coeficiente de correlación  de  Pearson. El valor que este coeficiente puede asumir está contenido en el intervalo [-1, 1]. El valor de -1 indica relación lineal negativa perfecta; el valor de 1 indica relación lineal positiva perfecta; el valor cero indica ausencia total de relación lineal entre las dos variables \cite{estudios-correl}.
-
-\item Explicativo: a este nivel de profundidad del análisis, el investigador busca responder por las causas del fenómenos real tratado. El esfuerzo se enfoca en explicar por qué ocurre un fenómeno y en qué condiciones se manifiesta. Es el nivel más profundo y estructurado, de hecho sigue en la línea de continuidad  demás niveles citados. Proporciona un sentido de entendimiento del fenómeno objeto de la investigación; en este sentido, realiza la finalidad del conocimiento científico, puesto que provee capacidad de predicción del fenómeno tratado \cite{sampieri_2}.
-\end{enumerate}
-
-El término diseño se refiere al plan o estrategia concebida para obtener la información que se desea \cite{sampieri_3}. El diseño del TFG propuesto tiene por objeto caracterizar el trabajo, ayudando a atender el problema de investigación, cumplir objetivos del estudio y someter la/s hipótesis a prueba. A partir de la información proveída, más el análisis del tema de investigación, se debe especificar el diseño del TFG propuesto.
-
-Tratándose de investigación básica con enfoque cuantitativo, los diseños pueden ser:
-\begin{itemize}
-\item experimentales: en ellos se manipulan intencionalmente las variables independientes y se miden las variables dependientes.
-\item no experimentales: en ellos se evita manipular variables, los fenómenos son observados tal como se dan en su contexto natural. Se los puede distinguir según  pueden ser transversales o longitudinales, dependiendo de si los datos se recolectan una sola vez en el tiempo, o varias veces, a objeto de observar cambios y procesos evolutivos, respectivamente.
-\end{itemize}
-
-Tratándose de investigación básica cualitativa, el término diseño adquiere significado distinto al que posee dentro del enfoque
-cuantitativo, particularmente porque las investigaciones cualitativas no se planean con detalle y están sujetas a las circunstancias de cada ambiente o escenario particular. En el enfoque cualitativo, el diseño se refiere al abordaje general que se habrá de utilizar en el proceso de investigación, se lo ha llegado a denominar simplemente marco interpretativo. Asimismo, cabe señalar que las fronteras entre tales diseños son sumamente relativas, realmente no existen, y la mayoría de los estudios toma elementos de más de uno de éstos. Es decir, los diseños se yuxtaponen. Cierta clasificación últimamente común considera los siguientes diseños genéricos cuyos nombres son de por sí descriptivos de su naturaleza: 
-\begin{itemize}
-\item Teoría fundamentada: Su propósito es desarrollar teoría basada en datos empíricos y se aplica a áreas específicas.
-\item Diseños etnográficos: En ellos se pretende describir y analizar ideas, creencias, significados, conocimientos y prácticas de grupos, culturas y comunidades.
-\item Diseños narrativos: En ellos se recolectan datos sobre las historias de vida y experiencias de ciertas personas para describirlas y analizarlas. Resultan de interés los individuos en sí mismos y su entorno.
-\item Diseños de investigación-acción: Su finalidad es resolver problemas cotidianos e inmediatos. y mejorar prácticas concretas. Su propósito fundamental se centra en aportar información que guíe la toma de decisiones para programas, procesos y reformas estructurales.
-\end{itemize}
-
-\subsubsection{Investigación aplicada o tecnológica}
-Con la investigación aplicada se pretende utilizar el conocimiento científico disponible para transformar la realidad en beneficio de la sociedad. Para lograr este propósito, se debe reunir el requisito de conocimiento científico acabado en el área de estudio del tema de investigación. A este requisito se suma el que se debe adquirir mediante los mismos recursos racionales que en la investigación básica: inducción y deducción.
-
-La transformación de la realidad a través del trabajo de investigación puede ocurrir de forma tangible, por ejemplo, mediante la construcción de un prototipo de artefacto físico; o de forma intangible, por ejemplo mediante la elaboración de una aplicación informática, o mediante la elaboración de un plan de servicio turístico, o un manual de mantenimiento de transformador de potencia.
-
-La descripción interpretativa precedente acerca de la investigación aplicada, muestra que la misma guarda similitud con el desarrollo tecnológico. De hecho, la tecnología surge naturalmente como realización del interés humano obtener provecho del conocimiento científico, más aún, a decir de \cite{dean}: la realizabilidad tecnológica ``Lo es materialmente si no contradice las leyes naturales conocidas y presenta una probabilidad razonable de lograr la conversión del conocimiento científico''.
-
-Partiendo del concepto \textit{tecnología}: conjunto de conocimientos científicos y técnicos a propósito para transformar la realidad generando invento de interés humano; resulta claro que la investigación aplicada coincide con el desarrollo tecnológico. Luego, la investigación aplicada resulta en un proceso productivo, siendo el producto un invento o innovación. Si el invento fue generado completamente desde el principio, se trata de una innovación radical: totalmente nueva; si solo se ha modificado algo previamente inventado, la innovación es incremental.
-
-En conclusión, la investigación aplicada coincide con lo que se ha dado en llamar \textit{investigación tecnológica}, por un lado; y por otro, al contener elementos propios del dominio subjetivo/intersubjetivo humano, a decir de \cite{dean}, ``Es una adaptación intencionada de medios para alcanzar un fin preconcebido superador de una situación inicial dada, y esto constituye una parte esencial de la ingeniería'', corresponde tener presente esa distinción fundacional que conlleva todo un conjunto de técnicas propias de la ingeniería y que configuran un método propio, el cual es el que hay que caracterizar del proyecto de TFG en caso de que el mismo se trate de un caso de investigación aplicada o tecnológica.
-
-Siendo la ingeniería, la actividad humana abocada a la generación de tecnologías, al tiempo de caracterizar su proyecto de TFG, con frecuencia encuentra que el trabajo por hacer es un caso de investigación tecnológica. En este contexto, para caracterizar el PTFG, se recomienda apoyarse en la descripción genérica del método de investigación tecnológica facilitada presentada a continuación.
-
-De acuerdo con \cite{dean}, es posible identificar de manera genérica el proceso de desarrollo tecnológico limitado al ámbito académico, como la vía que va desde la idea o concepto original hasta su concreción material, a través de las siguientes etapas:
-\begin{enumerate}[label=\alph*)]
-\item invención o adaptación de concepto, que es una etapa de diseño analítico donde el concepto básico es examinado para explicitar las restricciones o especificaciones de diseño;
-\item análisis del concepto, que es una etapa de diseño detallado donde las operaciones normales son exploradas para encontrar dónde el diseño es deficiente y sus límites son experimentados a través de pruebas o experimentos funcionales, lo cual genera ciclos de diseño-prueba que posibilitan ajustar o mejorar el diseño;
-\item síntesis del concepto, caracterizado por modelos físicos a escala de laboratorio, vale decir, prototipación, y experimentos funcionales.
-\end{enumerate}
-
-Basado en este método, se puede decir que el alcance en profundidad del trabajo de investigación aplicada o tecnológica lo constituye el nivel de complejidad que demandan las especificaciones de diseño de la prototipación del producto, las cuales dependen de la funcionalidad del producto deseado.
-
-Con respecto al diseño del trabajo de investigación tecnológica del TFG, hay que tener en cuenta que este se refiere a todo el proceso realizado por el investigador, y dentro de este proceso, como parte del diseño del TFG, se encuentran contenidas las especificaciones propias del producto, es decir, las especificaciones funcionales del prototipo a ser obtenido; por lo tanto, limitarse en esta subsección a la referencia del diseño del producto en lugar de referirse a todo el diseño del TFG constituye un error que debe evitarse.
 
 \subsection{Lista de tareas}
-Una vez caracterizado el trabajo de investigación se procede a plantear los procedimientos definidos por técnicas propias de la naturaleza del problema (relaciones entre variables) y por los objetivos decididos por el investigador.
+Las tareas se organizan en correspondencia con los objetivos específicos del anteproyecto, de modo que cada objetivo cuente con actividades concretas para su cumplimiento. Esta organización permite mantener la trazabilidad entre los objetivos, el desarrollo metodológico y los productos esperados del sistema web basado en arquitectura CNN-LSTM para la identificación de patrones conductuales asociados al TEA. 
 
-Se recomienda adoptar el enfoque pragmático de listar las tareas resultantes de los procesos, procedimientos, técnicas, etc., que se planean ejecutar. Cada tarea debe expresarse en tópico separado y según secuencia cronológica de ejecución. La primera palabra con que inicia el enunciado de la tarea, debe escribirse con sustantivo, (evitar iniciar la descripción de la tarea con verbo en infinitivo, el cual se destina solo al iniciar enunciado de objetivo).
+\textbf{Objetivo 1:} Adquirir conocimiento sobre la tecnología CNN-LSTM aplicada al TEA.
 
-\begin{enumerate}
-\item Tarea 1,
-\item Tarea 2,\\ 
-$ \vdots $
-\item Tarea \textit{n}.
+\begin{enumerate}[label=\alph*]
+    \item Revisión de conceptos sobre redes neuronales CNN, LSTM y arquitectura CNN-LSTM.
+    \item Análisis de aplicaciones de inteligencia artificial en patrones conductuales asociados al TEA
 \end{enumerate}
 
-Esta subsección termina con la elaboración del cronograma de tareas, representado por una tabla en cuya primera columna desde la izquierda se listan las tareas de la lista anteriormente elaborada, y en las siguientes columnas se indican los plazos, dentro del dominio de tiempo previsto hasta la terminación del trabajo. En la primera fila de la tabla se escriben los encabezados de tarea y tiempo, recordando especificar cuándo inicia el desarrollo del trabajo en sí, ya que de otro modo el cronograma queda flotando en el tiempo. Se debe evitar incluir en el cronograma las tareas o actividades propias de la elaboración del PTFG, ya que, como su nombre lo indica, el cronograma se refiere a actividades futuras, véase la tabla \ref{tab:cronograma}.
+\textbf{Objetivo 2:} Recolectar los datos conductuales asociados al TEA.
 
-\begin{center}
-\begin{table}[h]
-\begin{center}
-\caption{Cronograma de tareas}
-\label{tab:cronograma}
-\begin{scriptsize}
-\begin{tabular}{|>{\columncolor[rgb]{0.8,0.8,0.8}}c|cccccccc|}
-\hline 
- & \multicolumn{8}{>{\columncolor[rgb]{0.8,0.8,0.8}} c |}{Inicio: mes de año.} \\ 
-\multirow{-2}{*}{Tareas} & \cellcolor[rgb]{0.8,0.8,0.8} Mes 1.1 & \cellcolor[rgb]{0.8,0.8,0.8} Mes 1.2
- & \cellcolor[rgb]{0.8,0.8,0.8} Mes 2.1 & \cellcolor[rgb]{0.8,0.8,0.8} Mes 2.2  & \cellcolor[rgb]{0.8,0.8,0.8} Mes 3.1 & 
- \cellcolor[rgb]{0.8,0.8,0.8} Mes 3.2  & \cellcolor[rgb]{0.8,0.8,0.8} Mes 4.1 & \cellcolor[rgb]{0.8,0.8,0.8} Mes 4.2 \\ 
-\hline 
- 1) Xxxxx &\cellcolor{blue!25} & & &\cellcolor{blue!25} & & & & \\
- 2) Xxxxx & & \cellcolor{blue!25} & \cellcolor{blue!25} &  \cellcolor{blue!25} &  \cellcolor{blue!25} & & & \\ 
- 3) Xxxxx & & & & \cellcolor{blue!25} & \cellcolor{blue!25} &  \cellcolor{blue!25} &  \cellcolor{blue!25} & \\ 
- $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $ & $ \cdots $\\ 
- n) Xxxxx & & & & & & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} \\ 
+\begin{enumerate}[label=\alph*]
+    \item Selección de videos con conductas repetitivas asociadas al TEA.
+
+    \item Organización y etiquetado del conjunto de datos audiovisuales. 
+\end{enumerate}
+
+\textbf{Objetivo 3:} Diseñar la arquitectura de un modelo basado en redes neuronales CNN-LSTM para el reconocimiento de patrones conductuales asociados al TEA.
+
+\begin{enumerate}[label=\alph*]
+    \item Definición de la estructura CNN para extracción de características.
+    \item Integración de la capa LSTM para el análisis temporal.
+\end{enumerate}
+
+\textbf{Objetivo 4:} Preprocesar imágenes que posibilita la extracción de características relevantes a partir de los fotogramas de video.
+
+\begin{enumerate}[label=\alph*]
+    \item Extracción de fotogramas desde los videos.
+    \item Normalización y ajuste de imágenes.
+    \item Preparación del dataset para entrenamiento.
+\end{enumerate}
+
+\textbf{Objetivo 5:} Entrenar el modelo utilizando los datos preparados.
+
+\begin{enumerate}[label=\alph*]
+    \item Entrenamiento del modelo CNN-LSTM con el conjunto de datos preparado.
+    \item Ajuste de hiperparámetros del modelo. 
+
+\end{enumerate}
+
+\textbf{Objetivo 6:} Evaluar el desempeño del modelo mediante métricas en la identificación de patrones de conducta repetitivos asociados al TEA.
+
+\begin{enumerate}[label=\alph*]
+    \item Cálculo de métricas de desempeño: precisión, recall y F1-score.
+    \item Análisis de la matriz de confusión por conducta identificada. 
+
+\end{enumerate}
+
+\textbf{Objetivo 7:} Elaborar una plataforma web que integre el modelo de diagnóstico de TEA.
+
+\begin{enumerate}[label=\alph*]
+    \item Diseño e implementación de la interfaz web.
+    \item Integración del modelo CNN-LSTM en la plataforma web. 
+\end{enumerate}
+
+\textbf{Objetivo 8:} Validar el funcionamiento mediante pruebas de identificación de patrones de conducta asociados al TEA.
+
+\begin{enumerate}[label=\alph*]
+    \item Pruebas funcionales con videos no utilizados en el entrenamiento. 
+    \item Registro y análisis de los resultados obtenidos por el sistema. 
+\end{enumerate}
+
+
+\renewcommand{\arraystretch}{1.4}
+
+
+\begin{longtable}{|p{3.2cm}|p{4cm}|c|c|c|c|c|c|}
+\caption{Cronograma de actividades}
+\label{tab:cronograma2}
+\\
+
 \hline
-\end{tabular}
-\end{scriptsize}
-\end{center}
-\end{table}
-\end{center}
+\rowcolor[gray]{0.85}
+\textbf{Objetivos} & \textbf{Tareas} & \textbf{Jun} & \textbf{Jul} & \textbf{Ago} & \textbf{Sept.} & \textbf{Oct.} & \textbf{Nov.} \\
+\hline
+\endfirsthead
 
-Si la tarea de construir tabla en Latex se vuelve compleja y ardua, se la puede construir en algún editor de preferencia y luego guardarla como imagen de tabla en archivo png, jpg o pdf, en el mismo directorio o carpeta del archivo tex del PTFG, como es el caso de la tabla \ref{tab:cronog_imagen}. Como se puede apreciar, el entorno que contenga la tabla debe ser \textit{$\backslash$begin$\lbrace$table$\rbrace$ ... $\backslash$end$\lbrace$table$\rbrace$}, para que el contador de tablas la considere tabla (de otro modo el compilador la considera y la cuenta como si fuera figura).
 
-\begin{center}
-\begin{table}[H]
-\begin{center}
-\caption{Cronograma de tareas. \label{tab:cronog_imagen}}
-\includegraphics[scale=.8]{./crono_tareas}
-\end{center}
-\end{table}
-\end{center}
+\caption[]{Cronograma de actividades (Continuación)}
+\label{tab:cronograma2}
+\\
+\hline
+\rowcolor[gray]{0.85}
+\textbf{Objetivos} & \textbf{Tareas} & \textbf{Jun} & \textbf{Jul} & \textbf{Ago} & \textbf{Sept.} & \textbf{Oct.} & \textbf{Nov.} \\
+\hline
+\endhead
+
+\textbf{Objetivo 1:} Adquirir conocimiento sobre la tecnología CNN-LSTM aplicada al TEA.
+&
+a) Revisión de conceptos sobre redes neuronales CNN, LSTM y arquitectura CNN-LSTM.
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+&
+&
+&
+\\
+\cline{2-8}
+
+&
+b) Análisis de aplicaciones de inteligencia artificial en patrones conductuales asociados al TEA.
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+&
+&
+\\
+\hline
+
+\textbf{Objetivo 2:} Recolectar los datos conductuales asociados al TEA.
+&
+a) Selección de videos con conductas repetitivas asociadas al TEA.
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+&
+&
+\\
+\cline{2-8}
+
+&
+b) Organización y etiquetado del conjunto de datos audiovisuales.
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+&
+\\
+\hline
+
+\textbf{Objetivo 3:} Diseñar la arquitectura de un modelo basado en redes neuronales CNN-LSTM.
+&
+a) Definición de la estructura CNN para extracción de características espaciales.
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+&
+\\
+\cline{2-8}
+
+&
+b) Integración de la capa LSTM para análisis temporal.
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+\\
+\hline
+
+\textbf{Objetivo 4:} Preprocesar imágenes para extracción de características.
+&
+a) Extracción de fotogramas desde videos seleccionados.
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+&
+\\
+\cline{2-8}
+
+&
+b) Normalización y ajuste de imágenes.
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+\\
+\hline
+
+\textbf{Objetivo 5:} Entrenar el modelo utilizando los datos preparados.
+&
+a) Entrenamiento del modelo CNN-LSTM.
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+\\
+\cline{2-8}
+
+&
+b) Ajuste de hiperparámetros.
+&
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8}
+\\
+\hline
+
+\textbf{Objetivo 6:} Evaluar el desempeño del modelo.
+&
+a) Cálculo de precisión, recall y F1-score.
+&
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8}
+\\
+\cline{2-8}
+
+&
+b) Análisis de matriz de confusión.
+&
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8}
+\\
+\hline
+
+\textbf{Objetivo 7:} Elaborar plataforma web.
+&
+a) Diseño e implementación de interfaz web.
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+\\
+\cline{2-8}
+
+&
+b) Integración del modelo CNN-LSTM.
+&
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8}
+\\
+\hline
+
+\textbf{Objetivo 8:} Validar funcionamiento del sistema.
+&
+a) Pruebas funcionales con videos.
+&
+&
+&
+&
+&
+&
+\cellcolor[gray]{0.8}
+\\
+\cline{2-8}
+
+&
+b) Registro y análisis de resultados.
+&
+&
+&
+&
+&
+&
+\cellcolor[gray]{0.8}
+\\
+\hline
+
+\end{longtable}
+
 
 \subsection{Operacionalización de variables}
-En esta subsección se deben identificar las variables con que se manifiesta el fenómeno objeto de investigación. Seguidamente, las variables deben ser operacionalizadas, ya que se debe operar con ellas, vale decir, se las debe estimar para así conocer cómo se manifiesta el fenómeno. Es importante seleccionar correctamente para incluir todas las variables que son claves según el enfoque con que se aborda la solución del problema de investigación, pero que sean pocas para facilitar su control.
+Tecnologías aplicadas al TEA: Escala 
+\begin{itemize}
 
-La operacionalización de variables conlleva proveer, en párrafo separado para cada variable, su: a) Denominación: una palabra o frase que identifique lo más precisamente posible la variable. b) Definición: breve explicación descriptiva del significado de la variable. Y c) Estimador: se debe indicar el modo de estimar la variable; puede ser una unidad de medida, típicamente para variable cuantificable, ej. \textit{voltio}; un instrumento o una escala definida, típicamente para variables cualitativas, ej. \textit{métrica de calidad de software}, \textit{escala Likert sobre grado de satisfacción con el aplicativo, criterio de experto sobre la configuración del sistema, descripción técnica de parámetros del transformador de potencia, ...} Las partes descriptivas a), b) y c) deben escribirse en oraciones simples separadas por punto y seguido. Para este efecto hay que seguir el formato de la lista mostrada a continuación.
+\item \textbf{Aleteo de manos:} Conducta motora repetitiva asociada al TEA, observable en videos mediante movimientos reiterados de manos o brazos. Esta variable se relaciona con la recolección de datos conductuales y con la clasificación de patrones repetitivos.
 
-\begin{enumerate}
-\item Nombre de la variable 1: Definición de la variable 1. Estimador de la variable 1.
-\item Nombre de la variable 2: Definición de la variable 2. Estimador de la variable 2.\\
- $ \vdots $
-\item Nombre de la variable \textit{n}: Definición de la variable \textit{n}. Estimador de la variable \textit{n}.
-\end{enumerate}
+\textbf{Estimador:} Presencia o ausencia de aleteo de manos; cantidad de segmentos etiquetados con esta conducta.
 
-Luego de haber definido y operacionalizado todas las variables, se debe elaborar y desplegar una tabla, como la tabla \ref{tab:opera} en la que deben aparecer de izquierda a derecha: los objetivos específicos en la primera columna, y yuxtapuestos en las columnas aledañas, para cada objetivo por separado, a partir de la segunda columna, respectivamente: las tareas que conlleva lograr el objetivo, las variables de trabajo que serán estimadas para conocer cómo se resuelve el objetivo, y en la última columna, el estimador unívoco para la variable. El epígrafe de tabla debe situarse sobre la tabla, como se muestra en la tabla \ref{tab:opera}.
+\item \textbf{Balanceo corporal:} Conducta motora repetitiva asociada al TEA, observable en videos mediante movimientos reiterados del cuerpo hacia adelante, hacia atrás o hacia los lados. Esta variable se vincula con la organización del dataset y con el entrenamiento del modelo.
 
-\begin{center}
-\begin{table}[h]
-\begin{center}
-\caption{Operacionalización de variables.}\label{tab:opera}
-\begin{tabular}{||l|c|c|c||}
+\textbf{Estimador:} Presencia o ausencia de balanceo corporal; cantidad de segmentos etiquetados con esta conducta.
+
+\item \textbf{Movimientos repetitivos de cabeza:} Conducta motora repetitiva asociada al TEA, observable en videos mediante movimientos reiterados de la cabeza. Esta variable se relaciona con la identificación de patrones conductuales a partir de secuencias audiovisuales.
+
+\textbf{Estimador:} Presencia o ausencia de movimientos repetitivos de cabeza; cantidad de segmentos etiquetados con esta conducta.
+
+\item \textbf{Tecnología aplicada al TEA:} Recursos tecnológicos utilizados para el análisis automatizado de patrones conductuales en videos, considerando visión artificial, redes CNN, redes LSTM y arquitectura híbrida CNN-LSTM. Esta variable se relaciona con el objetivo orientado a adquirir conocimiento sobre la tecnología CNN-LSTM aplicada al TEA.
+
+\textbf{Estimador:} Marco teórico elaborado y cuadro comparativo de tecnologías aplicables al análisis de patrones conductuales.
+
+\item \textbf{Herramienta de video:} Conjunto de videos utilizados como fuente de datos para observar, etiquetar y procesar conductas repetitivas visualmente identificables. Esta variable se relaciona con la recolección, organización y preprocesamiento del conjunto de datos.
+
+\textbf{Estimador:} Número de videos seleccionados, duración, formato, calidad visual, clase asignada y cantidad de fotogramas extraídos.
+
+\item \textbf{Algoritmo de reconocimiento del TEA:} Arquitectura híbrida CNN-LSTM utilizada para reconocer patrones conductuales asociados al TEA a partir de secuencias de video. La CNN extrae características espaciales de los fotogramas, mientras que la LSTM analiza la evolución temporal de los movimientos.
+
+\textbf{Estimador:} Tasa de aprendizaje, número de épocas, tamaño de lote, precisión, recall, F1-score y matriz de confusión.
+
+\item \textbf{Forma de evaluación profesional:} Revisión preliminar de los resultados generados por el sistema, realizada por un profesional vinculado al área del TEA, con el propósito de valorar si las conductas identificadas por el modelo son coherentes con las observaciones esperadas.
+
+\textbf{Estimador:} Ficha de evaluación profesional, observaciones registradas y coincidencia entre la conducta identificada por el sistema y la valoración del profesional.
+
+\end{itemize}
+
+\renewcommand{\arraystretch}{1.3}
+\footnotesize
+
+\begin{longtable}{p{4cm} p{4cm} p{3.2cm} p{4cm}}
+
+\caption{Operacionalización de variables}
+\label{tab:operacionalizacion}
+\\
+
 \hline
-\cellcolor{gray!25}Objetivo específico& \cellcolor{gray!25}Tarea & \cellcolor{gray!25}Variable &\cellcolor{gray!25}Estimador*\\
+\textbf{Objetivo Específico} &
+\textbf{Tareas} &
+\textbf{Variable} &
+\textbf{Estimador / Indicador}
+\\
 \hline
-\multirow{2}{*}{Objetivo 1}&''&''&''\\
-&''&''&''\\
+\endfirsthead
+
+\multicolumn{4}{c}
+{{\bfseries Tabla \thetable{} -- Continuación}}
+\\
 \hline
-\multirow{2}{*}{Objetivo 2}&''&''&''\\
-&''&''&''\\
+
+\textbf{Objetivo Específico} &
+\textbf{Tareas} &
+\textbf{Variable} &
+\textbf{Estimador / Indicador}
+\\
 \hline
-\multirow{2}{*}{Objetivo 3}&''&''&''\\
-&''&''&''\\
+\endhead
+
+1. Adquirir conocimiento sobre la tecnología CNN-LSTM aplicada al Trastorno del Espectro Autista.
+&
+a) Revisión de conceptos sobre redes neuronales CNN, LSTM y arquitectura CNN-LSTM.
+
+b) Análisis de tecnologías aplicadas al estudio del TEA.
+&
+Tecnología aplicada al TEA.
+&
+Marco teórico elaborado y cuadro comparativo de tecnologías aplicables al problema.
+\\
 \hline
-\multirow{2}{*}{$\cdots$} & $\cdots$ & $\cdots$ & $\cdots$ \\
-& $\cdots$ & $\cdots$ & $\cdots$\\
+
+2. Recolectar los datos conductuales asociados al TEA.
+&
+a) Obtención de videos o bases de datos con registros conductuales.
+
+b) Organización y etiquetado del dataset.
+&
+Herramienta de video.
+&
+Cantidad de videos seleccionados, duración, formato, calidad visual y clases etiquetadas.
+\\
 \hline
-\multirow{2}{*}{Objetivo \textit{n}}&''&''&''\\
-&''&''&''\\
+
+3. Diseñar la arquitectura de un modelo basado en redes neuronales CNN-LSTM para el reconocimiento de patrones conductuales asociados al TEA.
+&
+a) Definición de la estructura CNN para extracción de características espaciales.
+
+b) Integración de la capa LSTM para el análisis temporal.
+&
+Algoritmo de reconocimiento del TEA.
+&
+Arquitectura definida del modelo CNN-LSTM, tasa de aprendizaje, número de épocas y tamaño del lote.
+\\
 \hline
-\multicolumn{4}{||c||}{{\scriptsize *Estimador: unidad de medida o instrumento, o especie de indicador descriptor de la variable.}}\\
+
+4. Preprocesar imágenes que posibiliten la extracción de características relevantes a partir de los fotogramas de video.
+&
+a) Extracción de fotogramas desde los videos seleccionados.
+
+b) Normalización y ajuste de imágenes para el entrenamiento.
+&
+Herramienta de video.
+&
+Cantidad de fotogramas extraídos, resolución de imágenes y proporción de datos preprocesados.
+\\
 \hline
-\end{tabular}
-\end{center}
-\end{table}
-\end{center}
 
-\textbf{\textit{Elementos gráficos.}} Es recomendable incluir un \textit{diagrama de flujo} del proceso a ser ejecutado, incluyendo al menos las principales tareas. Tratándose el tema de TFG, de un desarrollo tecnológico o de un servicio propuesto, se recomienda incluir un diagrama funcional del producto o servicio, y explicarlo mediante referencias cruzadas en el texto, haciendo referencia a la figura de dicho diagrama, ya que un recurso visual es más objetivo y claro para entender, ahorrando mucho esfuerzo de explicación. Son útiles para ayudar a ilustrar conceptos, relaciones y todo tipo de resultado desplegable como imagen visual. Entre estos elementos resalta por su importancia el diagrama de flujo del método del trabajo, en general; y en particular, el diagrama funcional del producto del trabajo. Un diagrama funcional es aquel que muestra las funciones de un sistema de forma gráfica y con algunas aclaraciones, es decir, con referencia cruzada en el texto, como este diagrama de la figura \ref{fig:diagrama}. El epígrafe de figura debe situarse al pie de la figura, como se muestra en la figura \ref{fig:diagrama}.
+5. Entrenar el modelo utilizando los datos preparados.
+&
+a) Entrenamiento del modelo CNN-LSTM con el conjunto de datos preparado.
 
-\begin{figure}[H]
-\begin{minipage}{\textwidth}
-\begin{center}
-\includegraphics[scale=.5]{./diag_funcional}
-\caption{Diagrama funcional}
-\label{fig:diagrama}
-\end{center}
-\end{minipage}
-\end{figure}
+b) Ajuste de hiperparámetros del modelo.
+&
+Algoritmo de reconocimiento del TEA.
+&
+Registro técnico del entrenamiento y configuración final del modelo.
+\\
+\hline
 
-\textbf{\textit{Entornos matemáticos.}} Las expresiones matemáticas se escriben solamente dentro de entornos matemáticos, también, en general, los símbolos propios de expresiones matemáticas. A continuación, algunos de estos entornos y expresiones matemáticas como ejemplos:
+6. Evaluar el desempeño del modelo mediante métricas en la identificación de patrones de conducta repetitivos asociados al TEA.
+&
+a) Cálculo de métricas de desempeño.
 
-Una ecuación en línea puede escribirse de esta manera: $\int_{-\infty}^{\infty} e^{-x^{2}} \, dx
-= \sqrt{\pi}$, donde el entorno en línea está denotado por el par de apertura y cierre \$ \dots \$. Opcionalmente, se logra el mismo resultado con el par $ \backslash( \dots \backslash) $, como puede apreciarse: \( \int_{-\infty}^{\infty} e^{-x^{2}} \, dx
-= \sqrt{\pi} \).
+b) Análisis de resultados por clase.
+&
+Aleteo de manos.
+&
+Valor de precisión, recall y F1-score en la identificación del aleteo de manos.
+\\
+\hline
 
-Una expresión matemática desplegada en línea especial separada del texto se obtiene con el entorno matemático creado por el par de apertura y cierre $ \backslash[ \dots \backslash] $. Por ejemplo: \[ \left( \frac{1}{2} \right)^{\alpha} \] se obtiene de esta manera.
+6. Evaluar el desempeño del modelo mediante métricas en la identificación de patrones de conducta repetitivos asociados al TEA.
+&
+a) Cálculo de métricas de desempeño.
 
-Cuando se demanda de ecuaciones numeradas, principalmente útiles para referencias cruzadas a las mismas, se emplea el siguiente entorno matemático que produce la salida correspondiente:
+b) Análisis de resultados por clase.
+&
+Balanceo corporal.
+&
+Valor de precisión, recall y F1-score en la identificación del balanceo corporal.
+\\
+\hline
 
-\begin{equation}
-\sum_{i = 1}^{ \left[ \frac{n}{2} \right] }
-\binom{ x_{i, i + 1}^{i^{2}} }
-{ \left[ \frac{i + 3}{3} \right] }
-\frac{ \sqrt{ \mu(i)^{ \frac{3}{2}} (i^{2} - 1) } }
-{\sqrt[3]{\rho(i)-2} + \sqrt[3]{\rho(i) - 1}}
-\end{equation}
+6. Evaluar el desempeño del modelo mediante métricas en la identificación de patrones de conducta repetitivos asociados al TEA.
+&
+a) Cálculo de métricas de desempeño.
 
-Nótese el uso de indentación jerárquica para rastrear la estructura de la fórmula, el espaciado para resaltar las llaves y la separación de líneas para los varios pedazos de fórmulas que son más largas que una línea de texto normal. Latex posee la capacidad de gestión automática de numeración y contadores, de manera que el escritor no debe actualizar manualmente los cambios de número y sus respectivas referencias.
+b) Análisis de resultados por clase.
+&
+Movimientos repetitivos de cabeza.
+&
+Valor de precisión, recall y F1-score en la identificación de movimientos repetitivos de cabeza.
+\\
+\hline
 
-Como ejemplo final, este es un ejemplo de referencia cruzada, (teorema \ref{Pitag} y Ec. \ref{pitag}):
+7. Elaborar una plataforma web que integre el modelo.
+&
+a) Diseño e implementación de la interfaz web.
 
-\begin{teorema}[Teorema de Pitágoras]
-En un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos:
-\begin{equation}
-hip^2 = cat_1^2 + cat_2^2
-\label{pitag}
-\end{equation}
-\label{Pitag}
-\end{teorema}
-donde: \textit{hip} es la hipotenusa del triángulo rectángulo y, $ cat_1 $ y $ cat_2 $ son los catetos del mismo.
+b) Integración del modelo CNN-LSTM en la plataforma.
+&
+Tecnología aplicada al TEA.
+&
+Funcionamiento de la plataforma web e integración operativa del modelo en el sistema.
+\\
+\hline
+
+8. Validar el funcionamiento del sistema.
+&
+a) Pruebas funcionales con videos no utilizados en el entrenamiento.
+
+b) Registro y análisis de resultados.
+&
+Forma de evaluación profesional.
+&
+Ficha de validación profesional, observaciones registradas y concordancia con los resultados del sistema.
+\\
+\hline
+
+\end{longtable}
+
 
 \addcontentsline{toc}{section}{Referencias Bibliográficas}
 
