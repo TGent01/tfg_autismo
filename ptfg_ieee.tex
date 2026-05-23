@@ -440,21 +440,18 @@ En conjunto, estos antecedentes evidencian que la detección del Trastorno del Es
 
 
 \section{Método}
-Desde el enfoque metodológico, se enmarcará como aplicada y de desarrollo tecnológico, con enfoque cuantitativo y alcance descriptivo-evaluativo. La propuesta buscará construir y evaluar un prototipo web capaz de analizar secuencias de video para identificar patrones conductuales repetitivos asociados al Trastorno del Espectro Autista mediante una arquitectura CNN-LSTM.
+Desde el enfoque metodológico, se enmarca como aplicada y de desarrollo tecnológico, con enfoque cuantitativo orientada a un prototipo y de diseño experimental. La propuesta buscará construir y evaluar un prototipo web para el apoyo al diagnóstico del TEA.
 
-El análisis se centrará en tres conductas visualmente observables: aleteo de manos, balanceo corporal y movimientos repetitivos de cabeza. Estas conductas serán consideradas como clases de análisis dentro del modelo, sin que ello implique la emisión de un diagnóstico clínico definitivo. El sistema funcionará como una herramienta de apoyo para el registro y análisis preliminar de patrones conductuales.
-
-La evaluación se realizará mediante métricas técnicas de desempeño, como precisión, recall y F1-score, además de pruebas funcionales del prototipo web. Estas pruebas permitirán verificar la carga de videos, el procesamiento de fotogramas, la integración del modelo y la presentación de resultados al usuario. 
-
+El análisis se centrará en tres conductas visualmente observables: aleteo de manos, balanceo corporal y movimientos repetitivos de cabeza. Estas conductas serán consideradas como clases de análisis dentro del modelo, sin que ello implique la emisión de un diagnóstico clínico definitivo.
 
 \subsection{Especificaciones de diseño}
- La especificación del diseño metodológico se orientará al desarrollo de un prototipo web de apoyo para la identificación de patrones conductuales asociados al Trastorno del Espectro Autista mediante una arquitectura CNN-LSTM. El sistema analizará secuencias de video con el propósito de reconocer tres conductas repetitivas visualmente observables: aleteo de manos, balanceo corporal y movimientos repetitivos de cabeza, conforme a la delimitación planteada en el anteproyecto.
-El diseño será no experimental, debido a que no se intervendrá sobre pacientes ni se modificarán condiciones clínicas. El análisis se realizará a partir de videos previamente seleccionados y etiquetados, los cuales servirán como fuente de datos para el entrenamiento y evaluación del modelo. Por tanto, la propuesta no buscará establecer un diagnóstico clínico definitivo, sino apoyar la identificación preliminar de patrones conductuales que puedan orientar una posterior evaluación profesional.
-Desde el punto de vista técnico, el diseño contemplará cinco componentes principales: organización del conjunto de videos, preprocesamiento de fotogramas, construcción del modelo CNN-LSTM, evaluación del desempeño e integración del modelo en una plataforma web. En la primera etapa, los videos serán clasificados según la conducta predominante observada. Posteriormente, se extraerán fotogramas, se normalizarán las imágenes y se prepararán las secuencias para su procesamiento computacional.
-La arquitectura CNN-LSTM será utilizada porque permite combinar el análisis espacial y temporal de los videos. La red CNN extraerá características visuales de cada fotograma, como postura, posición de manos, cabeza y cuerpo. Luego, la red LSTM procesará la secuencia temporal de esas características para identificar patrones repetitivos a lo largo del video.
+El diseño será experimental, debido a que no se intervendrá sobre pacientes ni se modificarán condiciones clínicas. El análisis se realizará a partir de videos previamente seleccionados y etiquetados, los cuales servirán como fuente de datos para el entrenamiento y evaluación del modelo. Por tanto, con la propuesta no se buscará establecer un diagnóstico clínico definitivo, sino apoyar la identificación preliminar de patrones conductuales que puedan orientar una posterior evaluación profesional.
+
+Desde el punto de vista técnico, el diseño contemplará cinco etapas principales: organización del conjunto de videos, preprocesamiento de fotogramas, construcción del modelo CNN-LSTM, evaluación del desempeño e integración del modelo en una plataforma web. En la primera etapa, los videos serán clasificados según la conducta predominante observada. Posteriormente, se extraerán fotogramas, se normalizarán las imágenes y se prepararán las secuencias para su procesamiento computacional.
+
+La arquitectura CNN-LSTM será utilizada porque posibilita combinar el análisis espacial y temporal de los videos. Con la red CNN extraerá características visuales de cada fotograma, como postura, posición de manos, cabeza y cuerpo. Luego, con la red LSTM procesará la secuencia temporal de esas características para identificar patrones repetitivos a lo largo del video.
 
 El desempeño del modelo será evaluado mediante métricas cuantitativas de clasificación, tales como precisión, recall y F1-score. 
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\columnwidth]{aut.png}
@@ -462,14 +459,10 @@ El desempeño del modelo será evaluado mediante métricas cuantitativas de clasifi
     \label{fig:web_tea}
 \end{figure}
 \textbf{Fuente: Elaboración propia mediante herramientas de inteligencia artificial.}
-
-La Figura 1 presenta la arquitectura funcional propuesta para el sistema web de apoyo a la identificación de patrones conductuales asociados al Trastorno del Espectro Autista. El flujo inicia en el cliente o frontend, donde el usuario podrá cargar secuencias de video y visualizar el estado del procesamiento y los resultados generados por el sistema.
+La Figura 1 ilustra la arquitectura funcional propuesta para el sistema web de apoyo a la identificación de patrones conductuales asociados al Trastorno del Espectro Autista. El flujo inicia en el cliente o frontend, donde el usuario podrá cargar secuencias de video y visualizar el estado del procesamiento y los resultados generados por el sistema.
 Posteriormente, las solicitudes serán enviadas al backend mediante servicios REST. Este componente se encargará de recibir los videos, ejecutar el preprocesamiento necesario y enviar los datos preparados al motor de inferencia. El modelo de inteligencia artificial estará basado en una arquitectura híbrida CNN-LSTM, en la cual la CNN extraerá características espaciales de los fotogramas y la LSTM analizará la secuencia temporal para identificar patrones conductuales repetitivos.
-Los resultados técnicos generados por el modelo serán devueltos al sistema web para su visualización. La plataforma podrá presentar la conducta identificada, el nivel de confianza y, en caso de implementarse, los segmentos temporales donde se detecte el patrón conductual. Asimismo, se considerará el almacenamiento seguro de videos y resultados, atendiendo a criterios de confidencialidad y protección de datos.
-La validación del funcionamiento del sistema deberá ser realizada por un profesional vinculado al área del TEA, como un especialista en salud mental, pediatría, neurología infantil, psicología clínica o desarrollo infantil. Esta validación tendrá carácter preliminar y no reemplazará el diagnóstico clínico profesional.
-
-
-
+Los resultados técnicos generados por el modelo serán devueltos al sistema web para su visualización. La plataforma podrá presentar la conducta identificada, el nivel de confianza, y en caso de implementarse, los segmentos temporales donde se detecte el patrón conductual. Asimismo, se considerará el almacenamiento seguro de videos y resultados, atendiendo a criterios de confidencialidad y protección de datos.
+La validación del funcionamiento del sistema será realizada por un profesional vinculado al área del TEA, como un especialista en salud mental, pediatría, neurología infantil, psicología clínica o desarrollo infantil. Esta validación tendrá carácter preliminar y no reemplazará el diagnóstico clínico profesional
 
 \subsection{Lista de tareas}
 Las tareas se organizan en correspondencia con los objetivos específicos del anteproyecto, de modo que cada objetivo cuente con actividades concretas para su cumplimiento. Esta organización permite mantener la trazabilidad entre los objetivos, el desarrollo metodológico y los productos esperados del sistema web basado en arquitectura CNN-LSTM para la identificación de patrones conductuales asociados al TEA. 
@@ -501,13 +494,13 @@ Las tareas se organizan en correspondencia con los objetivos específicos del ant
 \begin{enumerate}[label=\alph*]
     \item Extracción de fotogramas desde los videos.
     \item Normalización y ajuste de imágenes.
-    \item Preparación del dataset para entrenamiento.
+    \item Preparación del conjunto de datos para entrenamiento.
 \end{enumerate}
 
 \textbf{Objetivo 5:} Entrenar el modelo utilizando los datos preparados.
 
 \begin{enumerate}[label=\alph*]
-    \item Entrenamiento del modelo CNN-LSTM con el conjunto de datos preparado.
+    \item Entrenamiento del modelo CNN-LSTM con el conjunto de datos preparados.
     \item Ajuste de hiperparámetros del modelo. 
 
 \end{enumerate}
@@ -523,7 +516,7 @@ Las tareas se organizan en correspondencia con los objetivos específicos del ant
 \textbf{Objetivo 7:} Elaborar una plataforma web que integre el modelo de diagnóstico de TEA.
 
 \begin{enumerate}[label=\alph*]
-    \item Diseño e implementación de la interfaz web.
+    \item Elaboración de la interfaz web.
     \item Integración del modelo CNN-LSTM en la plataforma web. 
 \end{enumerate}
 
@@ -531,7 +524,7 @@ Las tareas se organizan en correspondencia con los objetivos específicos del ant
 
 \begin{enumerate}[label=\alph*]
     \item Pruebas funcionales con videos no utilizados en el entrenamiento. 
-    \item Registro y análisis de los resultados obtenidos por el sistema. 
+    \item Registro de los resultados obtenidos por el sistema. 
 \end{enumerate}
 
 
@@ -751,7 +744,6 @@ b) Registro y análisis de resultados.
 
 \end{longtable}
 
-
 \subsection{Operacionalización de variables}
 Tecnologías aplicadas al TEA: Escala 
 \begin{itemize}
@@ -760,7 +752,7 @@ Tecnologías aplicadas al TEA: Escala
 
 \textbf{Estimador:} Presencia o ausencia de aleteo de manos; cantidad de segmentos etiquetados con esta conducta.
 
-\item \textbf{Balanceo corporal:} Conducta motora repetitiva asociada al TEA, observable en videos mediante movimientos reiterados del cuerpo hacia adelante, hacia atrás o hacia los lados. Esta variable se vincula con la organización del dataset y con el entrenamiento del modelo.
+\item \textbf{Balanceo corporal:} Conducta motora repetitiva asociada al TEA, observable en videos mediante movimientos reiterados del cuerpo hacia adelante, hacia atrás o hacia los lados. Esta variable se vincula con la organización del conjunto de datos y con el entrenamiento del modelo.
 
 \textbf{Estimador:} Presencia o ausencia de balanceo corporal; cantidad de segmentos etiquetados con esta conducta.
 
@@ -768,21 +760,13 @@ Tecnologías aplicadas al TEA: Escala
 
 \textbf{Estimador:} Presencia o ausencia de movimientos repetitivos de cabeza; cantidad de segmentos etiquetados con esta conducta.
 
-\item \textbf{Tecnología aplicada al TEA:} Recursos tecnológicos utilizados para el análisis automatizado de patrones conductuales en videos, considerando visión artificial, redes CNN, redes LSTM y arquitectura híbrida CNN-LSTM. Esta variable se relaciona con el objetivo orientado a adquirir conocimiento sobre la tecnología CNN-LSTM aplicada al TEA.
-
-\textbf{Estimador:} Marco teórico elaborado y cuadro comparativo de tecnologías aplicables al análisis de patrones conductuales.
-
-\item \textbf{Herramienta de video:} Conjunto de videos utilizados como fuente de datos para observar, etiquetar y procesar conductas repetitivas visualmente identificables. Esta variable se relaciona con la recolección, organización y preprocesamiento del conjunto de datos.
-
-\textbf{Estimador:} Número de videos seleccionados, duración, formato, calidad visual, clase asignada y cantidad de fotogramas extraídos.
-
 \item \textbf{Algoritmo de reconocimiento del TEA:} Arquitectura híbrida CNN-LSTM utilizada para reconocer patrones conductuales asociados al TEA a partir de secuencias de video. La CNN extrae características espaciales de los fotogramas, mientras que la LSTM analiza la evolución temporal de los movimientos.
 
 \textbf{Estimador:} Tasa de aprendizaje, número de épocas, tamaño de lote, precisión, recall, F1-score y matriz de confusión.
 
 \item \textbf{Forma de evaluación profesional:} Revisión preliminar de los resultados generados por el sistema, realizada por un profesional vinculado al área del TEA, con el propósito de valorar si las conductas identificadas por el modelo son coherentes con las observaciones esperadas.
 
-\textbf{Estimador:} Ficha de evaluación profesional, observaciones registradas y coincidencia entre la conducta identificada por el sistema y la valoración del profesional.
+\textbf{Estimador:} Criterio de evaluación médico.
 
 \end{itemize}
 

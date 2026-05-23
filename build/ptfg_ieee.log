@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.3)  22 MAY 2026 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.3)  22 MAY 2026 22:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -612,295 +612,295 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--291
 <aut.png, id=369, 590.95781pt x 306.39468pt>
 File: aut.png Graphic file (type png)
 <use aut.png>
-Package pdftex.def Info: aut.png  used on input line 460.
+Package pdftex.def Info: aut.png  used on input line 457.
 (pdftex.def)             Requested size: 398.3386pt x 206.53165pt.
- [19] [20 <./aut.png>]
-Overfull \hbox (9.92284pt too wide) in paragraph at lines 523--524
+ [19 <./aut.png>] [20]
+Overfull \hbox (9.92284pt too wide) in paragraph at lines 516--517
 []\OT1/cmr/bx/n/12 Objetivo 7: \OT1/cmr/m/n/12 Ela-bo-rar una pla-ta-for-ma web que in-te-gre el mo-de-lo de diagn^^Sosti-
  []
 
 
-Overfull \hbox (53.11415pt too wide) in alignment at lines 541--550
+Overfull \hbox (53.11415pt too wide) in alignment at lines 534--543
  [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (53.11415pt too wide) in alignment at lines 550--560
+Overfull \hbox (53.11415pt too wide) in alignment at lines 543--553
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--563
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 []|\OT1/cmr/bx/n/12 Objetivo 1:
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 562--563
+Underfull \hbox (badness 4899) in paragraph at lines 555--556
 \OT1/cmr/m/n/12 Ad-qui-rir co-no-ci-
  []
 
 
-Underfull \hbox (badness 3108) in paragraph at lines 562--563
+Underfull \hbox (badness 3108) in paragraph at lines 555--556
 \OT1/cmr/m/n/12 mien-to so-bre la
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 562--563
+Underfull \hbox (badness 2261) in paragraph at lines 555--556
 \OT1/cmr/m/n/12 tec-no-log^^S^^Pa CNN-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--563
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 \OT1/cmr/m/n/12 LSTM apli-ca-da
  []
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 575--576
+Underfull \hbox (badness 2050) in paragraph at lines 568--569
 []|\OT1/cmr/m/n/12 b) An^^Sali-sis de apli-
  []
 
 
-Underfull \hbox (badness 4024) in paragraph at lines 587--588
+Underfull \hbox (badness 4024) in paragraph at lines 580--581
 []|\OT1/cmr/m/n/12 a) Se-lec-ci^^Son de vi-
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 598--599
+Underfull \hbox (badness 1048) in paragraph at lines 591--592
 \OT1/cmr/m/n/12 de da-tos au-dio-vi-sua-
  []
 
 
-Underfull \hbox (badness 3547) in paragraph at lines 610--611
+Underfull \hbox (badness 3547) in paragraph at lines 603--604
 []|\OT1/cmr/m/n/12 a) De-fi-ni-ci^^Son de la
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 610--611
+Underfull \hbox (badness 2213) in paragraph at lines 603--604
 \OT1/cmr/m/n/12 ex-trac-ci^^Son de ca-rac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--622
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
 []|\OT1/cmr/m/n/12 b) In-te-gra-ci^^Son de
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 621--622
+Underfull \hbox (badness 1199) in paragraph at lines 614--615
 \OT1/cmr/m/n/12 la ca-pa LSTM pa-ra
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--632
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 []|\OT1/cmr/bx/n/12 Objetivo 4:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--632
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 \OT1/cmr/m/n/12 Pre-pro-ce-sar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--632
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 \OT1/cmr/m/n/12 im^^Sage-nes pa-ra
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--632
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 \OT1/cmr/m/n/12 ex-trac-ci^^Son de
  []
 
 
-Underfull \hbox (badness 5893) in paragraph at lines 644--645
+Underfull \hbox (badness 5893) in paragraph at lines 637--638
 []|\OT1/cmr/m/n/12 b) Nor-ma-li-za-ci^^Son y
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 667--668
+Underfull \hbox (badness 1831) in paragraph at lines 660--661
 []|\OT1/cmr/m/n/12 b) Ajus-te de hi-per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--728
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 []|\OT1/cmr/bx/n/12 Objetivo 8:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--728
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 \OT1/cmr/m/n/12 Va-li-dar fun-cio-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--728
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 \OT1/cmr/m/n/12 na-mien-to del
  []
 
 
-Overfull \hbox (53.11415pt too wide) in alignment at lines 560--752
+Overfull \hbox (53.11415pt too wide) in alignment at lines 553--745
  [] [] [] [] [] [] [] [] 
  []
 
 [21]
-c:/Users/marti/OneDrive/Documentos/tfg/ptfg_ieee/ptfg_ieee.tex:752: ignored error: Infinite glue shrinkage found in box being split [22] [23] [24]
-Overfull \hbox (82.14319pt too wide) in alignment at lines 792--805
+c:/Users/marti/OneDrive/Documentos/tfg/ptfg_ieee/ptfg_ieee.tex:745: ignored error: Infinite glue shrinkage found in box being split [22] [23]
+Overfull \hbox (82.14319pt too wide) in alignment at lines 776--789
  [] [] [] [] 
  []
 
 
-Overfull \hbox (82.14319pt too wide) in alignment at lines 805--818
+Overfull \hbox (82.14319pt too wide) in alignment at lines 789--802
  [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 822--823
+Underfull \hbox (badness 2698) in paragraph at lines 806--807
 []|\OT1/cmr/m/n/10 a) Re-vi-si^^Son de con-cep-
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 824--825
+Underfull \hbox (badness 1389) in paragraph at lines 808--809
 \OT1/cmr/m/n/10 apli-ca-das al es-tu-dio del
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 826--827
+Underfull \hbox (badness 3058) in paragraph at lines 810--811
 []|\OT1/cmr/m/n/10 Tecnolog^^S^^Pa apli-ca-da
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 828--830
+Underfull \hbox (badness 1189) in paragraph at lines 812--814
 []|\OT1/cmr/m/n/10 Marco te^^Sori-co ela-bo-ra-do
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 828--830
+Underfull \hbox (badness 2134) in paragraph at lines 812--814
 \OT1/cmr/m/n/10 tec-no-log^^S^^Pas apli-ca-bles al
  []
 
 
-Underfull \hbox (badness 2790) in paragraph at lines 832--833
+Underfull \hbox (badness 2790) in paragraph at lines 816--817
 []|\OT1/cmr/m/n/10 2. Re-co-lec-tar los da-tos
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 838--839
+Underfull \hbox (badness 1648) in paragraph at lines 822--823
 []|\OT1/cmr/m/n/10 Herramienta de vi-
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 844--845
+Underfull \hbox (badness 1436) in paragraph at lines 828--829
 \OT1/cmr/m/n/10 ra de un mo-de-lo ba-sa-
  []
 
 
-Underfull \hbox (badness 2564) in paragraph at lines 844--845
+Underfull \hbox (badness 2564) in paragraph at lines 828--829
 \OT1/cmr/m/n/10 do en re-des neu-ro-na-les
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 844--845
+Underfull \hbox (badness 1270) in paragraph at lines 828--829
 \OT1/cmr/m/n/10 CNN-LSTM pa-ra el re-
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 856--857
+Underfull \hbox (badness 1472) in paragraph at lines 840--841
 []|\OT1/cmr/m/n/10 4. Pre-pro-ce-sar im^^Sage-nes
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 862--863
+Underfull \hbox (badness 1648) in paragraph at lines 846--847
 []|\OT1/cmr/m/n/10 Herramienta de vi-
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 864--866
+Underfull \hbox (badness 1789) in paragraph at lines 848--850
 []|\OT1/cmr/m/n/10 Cantidad de fo-to-gra-mas
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 864--866
+Underfull \hbox (badness 3724) in paragraph at lines 848--850
 \OT1/cmr/m/n/10 ex-tra^^S^^Pdos, re-so-lu-ci^^Son de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 880--881
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
 \OT1/cmr/m/n/10 del mo-de-lo me-dian-te
  []
 
 
-Underfull \hbox (badness 3068) in paragraph at lines 880--881
+Underfull \hbox (badness 3068) in paragraph at lines 864--865
 \OT1/cmr/m/n/10 m^^Setri-cas en la iden-ti-fi-
  []
 
 
-Underfull \hbox (badness 5726) in paragraph at lines 880--881
+Underfull \hbox (badness 5726) in paragraph at lines 864--865
 \OT1/cmr/m/n/10 ca-ci^^Son de pa-tro-nes de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 880--881
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
 \OT1/cmr/m/n/10 con-duc-ta re-pe-ti-ti-vos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 892--893
+Underfull \hbox (badness 10000) in paragraph at lines 876--877
 \OT1/cmr/m/n/10 del mo-de-lo me-dian-te
  []
 
 
-Underfull \hbox (badness 3068) in paragraph at lines 892--893
+Underfull \hbox (badness 3068) in paragraph at lines 876--877
 \OT1/cmr/m/n/10 m^^Setri-cas en la iden-ti-fi-
  []
 
 
-Underfull \hbox (badness 5726) in paragraph at lines 892--893
+Underfull \hbox (badness 5726) in paragraph at lines 876--877
 \OT1/cmr/m/n/10 ca-ci^^Son de pa-tro-nes de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 892--893
+Underfull \hbox (badness 10000) in paragraph at lines 876--877
 \OT1/cmr/m/n/10 con-duc-ta re-pe-ti-ti-vos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 904--905
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
 \OT1/cmr/m/n/10 del mo-de-lo me-dian-te
  []
 
 
-Underfull \hbox (badness 3068) in paragraph at lines 904--905
+Underfull \hbox (badness 3068) in paragraph at lines 888--889
 \OT1/cmr/m/n/10 m^^Setri-cas en la iden-ti-fi-
  []
 
 
-Underfull \hbox (badness 5726) in paragraph at lines 904--905
+Underfull \hbox (badness 5726) in paragraph at lines 888--889
 \OT1/cmr/m/n/10 ca-ci^^Son de pa-tro-nes de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 904--905
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
 \OT1/cmr/m/n/10 con-duc-ta re-pe-ti-ti-vos
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 922--923
+Underfull \hbox (badness 3058) in paragraph at lines 906--907
 []|\OT1/cmr/m/n/10 Tecnolog^^S^^Pa apli-ca-da
  []
 
 
-Underfull \hbox (badness 3792) in paragraph at lines 928--929
+Underfull \hbox (badness 3792) in paragraph at lines 912--913
 []|\OT1/cmr/m/n/10 8. Va-li-dar el fun-cio-na-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 930--931
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
 []|\OT1/cmr/m/n/10 a) Prue-bas fun-cio-na-les
  []
 
 
-Overfull \hbox (82.14319pt too wide) in alignment at lines 818--940
+Overfull \hbox (82.14319pt too wide) in alignment at lines 802--924
  [] [] [] [] 
  []
 
-c:/Users/marti/OneDrive/Documentos/tfg/ptfg_ieee/ptfg_ieee.tex:940: ignored error: Infinite glue shrinkage found in box being split [25] (c:\Users\marti\OneDrive\Documentos\tfg\ptfg_ieee\build\ptfg_ieee.bbl [26] [27]) [28] (c:\Users\marti\OneDrive\Documentos\tfg\ptfg_ieee\build\ptfg_ieee.aux
+c:/Users/marti/OneDrive/Documentos/tfg/ptfg_ieee/ptfg_ieee.tex:924: ignored error: Infinite glue shrinkage found in box being split [24] (c:\Users\marti\OneDrive\Documentos\tfg\ptfg_ieee\build\ptfg_ieee.bbl [25] [26]) [27] (c:\Users\marti\OneDrive\Documentos\tfg\ptfg_ieee\build\ptfg_ieee.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -919,17 +919,17 @@ Package rerunfilecheck Info: File `ptfg_ieee.out' has not changed.
 (rerunfilecheck)             Checksum: 456AC4BC0C73C68353D5A65A2B6022FA;8349.
  ) 
 Here is how much of TeX's memory you used:
- 14208 strings out of 467871
- 224303 string characters out of 5418377
- 692577 words of memory out of 5000000
+ 14207 strings out of 467871
+ 224296 string characters out of 5418377
+ 695577 words of memory out of 5000000
  42736 multiletter control sequences out of 15000+600000
  642176 words of font info for 95 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  75i,13n,83p,1131b,799s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on c:\Users\marti\OneDrive\Documentos\tfg\ptfg_ieee\build\ptfg_ieee.pdf (29 pages, 529120 bytes).
+Output written on c:\Users\marti\OneDrive\Documentos\tfg\ptfg_ieee\build\ptfg_ieee.pdf (28 pages, 526749 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 132 named destinations out of 1000 (max. 500000)
  310 words of extra memory for PDF output out of 10000 (max. 10000000)
 

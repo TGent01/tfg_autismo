@@ -36,4 +36,4 @@
 \contentsline {subsection}{\numberline {8.1}Especificaciones de dise\~no}{19}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Lista de tareas}{20}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Operacionalizaci\'on de variables}{23}{subsection.8.3}%
-\contentsline {section}{Referencias Bibliogr\'aficas}{26}{table.3}%
+\contentsline {section}{Referencias Bibliogr\'aficas}{25}{table.3}%
