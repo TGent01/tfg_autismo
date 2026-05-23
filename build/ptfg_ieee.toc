@@ -9,32 +9,31 @@
 \contentsline {section}{\numberline {6}Impacto de la investigaci\'on}{6}{section.6}%
 \contentsline {section}{\numberline {7}Marco te\'orico}{7}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Trastorno del espectro autista }{7}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}El Contexto de la Salud Pedi\'atrica en Paraguay}{8}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}S\IeC {\'\i }ntomas del Trastorno del Espectro Autista}{8}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Inteligencia Artificial}{11}{subsection.7.4}%
-\contentsline {subsubsection}{\numberline {7.4.1}Definici\'on y fundamentos}{11}{subsubsection.7.4.1}%
-\contentsline {subsubsection}{\numberline {7.4.2} Ramas de la IA aplicadas a la ingenier\IeC {\'\i }a}{11}{subsubsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.5}Aprendizaje autom\'atico}{11}{subsection.7.5}%
-\contentsline {subsubsection}{\numberline {7.5.1} Definici\'on y fundamentos}{11}{subsubsection.7.5.1}%
-\contentsline {subsubsection}{\numberline {7.5.2} Aprendizaje supervisado}{12}{subsubsection.7.5.2}%
-\contentsline {subsubsection}{\numberline {7.5.3} Aplicaci\'on en diagn\'ostico cl\IeC {\'\i }nico}{12}{subsubsection.7.5.3}%
-\contentsline {subsection}{\numberline {7.6}Visi\'on artificial}{12}{subsection.7.6}%
-\contentsline {subsubsection}{\numberline {7.6.1}Definici\'on y evoluci\'on}{12}{subsubsection.7.6.1}%
-\contentsline {subsubsection}{\numberline {7.6.2}Aplicaci\'on en an\'alisis de comportamiento}{13}{subsubsection.7.6.2}%
-\contentsline {subsection}{\numberline {7.7}Arquitectura H\IeC {\'\i }brida CNN-LSTM para Reconocimiento de Patrones}{13}{subsection.7.7}%
-\contentsline {subsubsection}{\numberline {7.7.1}Fundamentos de la Combinaci\'on Espacio-Temporal}{13}{subsubsection.7.7.1}%
-\contentsline {subsubsection}{\numberline {7.7.2}Extracci\'on de Caracter\IeC {\'\i }sticas con CNN (Capa Espacial)}{13}{subsubsection.7.7.2}%
-\contentsline {subsubsection}{\numberline {7.7.3}Procesamiento de Secuencias con LSTM (Capa Temporal)}{14}{subsubsection.7.7.3}%
-\contentsline {subsubsection}{\numberline {7.7.4}Flujo de Datos y Clasificaci\'on de Patrones Conductuales}{14}{subsubsection.7.7.4}%
-\contentsline {subsection}{\numberline {7.8}Dise\~no web}{14}{subsection.7.8}%
-\contentsline {subsubsection}{\numberline {7.8.1}Interfaz de Usuario y Arquitectura de Integraci\'on Web}{14}{subsubsection.7.8.1}%
-\contentsline {subsubsection}{\numberline {7.8.2}Arquitectura del Lado del Cliente (Frontend)}{15}{subsubsection.7.8.2}%
-\contentsline {subsubsection}{\numberline {7.8.3}Comunicaci\'on y Servicios de Red (Backend)}{15}{subsubsection.7.8.3}%
-\contentsline {subsubsection}{\numberline {7.8.4}Gesti\'on de Seguridad y Privacidad de Datos}{16}{subsubsection.7.8.4}%
-\contentsline {subsubsection}{\numberline {7.8.5}Visualizaci\'on de Resultados y Dise\~no de Interacci\'on}{16}{subsubsection.7.8.5}%
-\contentsline {subsection}{\numberline {7.9}Antecedentes}{17}{subsection.7.9}%
-\contentsline {section}{\numberline {8}M\'etodo}{19}{section.8}%
+\contentsline {subsection}{\numberline {7.2}El Contexto de la Salud Pedi\'atrica en Paraguay}{10}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Inteligencia Artificial}{10}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Definici\'on y fundamentos}{10}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2} Ramas de la IA aplicadas a la ingenier\IeC {\'\i }a}{10}{subsubsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.4}Aprendizaje autom\'atico}{11}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1} Definici\'on y fundamentos}{11}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2} Aprendizaje supervisado}{11}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3} Aplicaci\'on en diagn\'ostico cl\IeC {\'\i }nico}{11}{subsubsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.5}Visi\'on artificial}{12}{subsection.7.5}%
+\contentsline {subsubsection}{\numberline {7.5.1}Definici\'on y evoluci\'on}{12}{subsubsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.2}Aplicaci\'on en an\'alisis de comportamiento}{12}{subsubsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.6}Arquitectura H\IeC {\'\i }brida CNN-LSTM para Reconocimiento de Patrones}{13}{subsection.7.6}%
+\contentsline {subsubsection}{\numberline {7.6.1}Fundamentos de la Combinaci\'on Espacio-Temporal}{13}{subsubsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.2}Extracci\'on de Caracter\IeC {\'\i }sticas con CNN (Capa Espacial)}{13}{subsubsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.3}Procesamiento de Secuencias con LSTM (Capa Temporal)}{13}{subsubsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.4}Flujo de Datos y Clasificaci\'on de Patrones Conductuales}{13}{subsubsection.7.6.4}%
+\contentsline {subsection}{\numberline {7.7}Dise\~no web}{14}{subsection.7.7}%
+\contentsline {subsubsection}{\numberline {7.7.1}Interfaz de Usuario y Arquitectura de Integraci\'on Web}{14}{subsubsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.2}Arquitectura del Lado del Cliente (Frontend)}{14}{subsubsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.3}Comunicaci\'on y Servicios de Red (Backend)}{15}{subsubsection.7.7.3}%
+\contentsline {subsubsection}{\numberline {7.7.4}Gesti\'on de Seguridad y Privacidad de Datos}{15}{subsubsection.7.7.4}%
+\contentsline {subsubsection}{\numberline {7.7.5}Visualizaci\'on de Resultados y Dise\~no de Interacci\'on}{16}{subsubsection.7.7.5}%
+\contentsline {subsection}{\numberline {7.8}Antecedentes}{16}{subsection.7.8}%
+\contentsline {section}{\numberline {8}M\'etodo}{18}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Especificaciones de dise\~no}{19}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Lista de tareas}{21}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Operacionalizaci\'on de variables}{24}{subsection.8.3}%
-\contentsline {section}{Referencias Bibliogr\'aficas}{27}{table.3}%
+\contentsline {subsection}{\numberline {8.2}Lista de tareas}{20}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Operacionalizaci\'on de variables}{23}{subsection.8.3}%
+\contentsline {section}{Referencias Bibliogr\'aficas}{26}{table.3}%
