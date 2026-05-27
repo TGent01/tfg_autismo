@@ -295,19 +295,19 @@ En la realidad paraguaya, la detección se enfrenta al desafío de la centralizaci
 
 \subsection{Inteligencia Artificial}
 \subsubsection{Definición y fundamentos}
-La Inteligencia Artificial se definirá como el campo de la ciencia computacional dedicado al desarrollo de sistemas capaces de realizar tareas que tradicionalmente requerirían de la inteligencia humana, tales como el razonamiento, el aprendizaje y la percepción visual \cite{russell_norvig_ai_2020}. En el ámbito de la ingeniería, la IA presentará una evolución significativa, pasando de sistemas basados en reglas lógicas hacia modelos capaces de extraer conocimiento directamente a partir de los datos \cite{mitchell_ml_1997}. Esta transformación permitirá que la disciplina deje de depender de heurísticas rígidas y se consolide como un marco robusto de aprendizaje estadístico y computacional.
+La Inteligencia Artificial se define como el campo de la ciencia computacional dedicado al desarrollo de sistemas capaces de realizar tareas que tradicionalmente requieren de la inteligencia humana, tales como el razonamiento, el aprendizaje y la percepción visual \cite{russell_norvig_ai_2020}. En el ámbito de la ingeniería, la IA presenta una evolución significativa, pasando de sistemas basados en reglas lógicas hacia modelos capaces de extraer conocimiento directamente a partir de los datos \cite{mitchell_ml_1997}. Esta transformación permite que la disciplina deje de depender de heurísticas rígidas y se consolide como un marco robusto de aprendizaje estadístico y computacional.
 \subsubsection{ Ramas de la IA aplicadas a la ingeniería}
-Actualmente, la Inteligencia Artificial se dividirá en diversas áreas de especialización, destacándose el Aprendizaje Automático (Machine Learning) y el Aprendizaje Profundo (Deep Learning) como las ramas de mayor impacto en la ingeniería moderna. Estos enfoques permitirán a los sistemas no solo procesar información, sino también aprender de grandes volúmenes de datos y generalizar soluciones a partir de patrones complejos \cite{goodfellow_dl_2016}. En el área de la salud, estas capacidades facilitarán la identificación de biomarcadores y patrones conductuales que resultarán imperceptibles mediante métodos tradicionales, posicionando a la IA como una herramienta clave de apoyo en el diagnóstico clínico \cite{sherkatghanad_autism_2020}.
+Actualmente, la Inteligencia Artificial se dividide en diversas áreas de especialización, destacándose el Aprendizaje Automático (Machine Learning) y el Aprendizaje Profundo (Deep Learning) como las ramas de mayor impacto en la ingeniería moderna. Estos enfoques permiten a los sistemas no solo procesar información, sino también aprender de grandes volúmenes de datos y generalizar soluciones a partir de patrones complejos \cite{goodfellow_dl_2016}. En el área de la salud, estas capacidades facilitarán la identificación de biomarcadores y patrones conductuales que resultarán imperceptibles mediante métodos tradicionales, posicionando a la IA como una herramienta clave de apoyo en el diagnóstico clínico \cite{sherkatghanad_autism_2020}.
 
 
 \subsection{Aprendizaje automático}
 \subsubsection{ Definición y fundamentos}
-El Aprendizaje Automático constituirá una subdisciplina fundamental dentro del campo de la Inteligencia Artificial, cuyo propósito será desarrollar modelos capaces de aprender patrones a partir de datos sin ser programados de forma explícita para cada tarea. En este sentido, los algoritmos permitirán identificar relaciones complejas dentro de grandes volúmenes de información, facilitando la automatización de procesos de análisis y toma de decisiones \cite{bishop_prml_2006}.
-Los fundamentos del aprendizaje automático se basarán en el uso de datos de entrada, modelos matemáticos y procesos de entrenamiento mediante los cuales el sistema ajustará sus parámetros internos con el objetivo de minimizar el error. Este proceso implicará el uso de funciones de pérdida y algoritmos de optimización, así como técnicas de validación para garantizar la capacidad de generalización del modelo frente a datos no vistos previamente \cite{goodfellow_dl_2016_v2}.
+El Aprendizaje Automático constituye una subdisciplina fundamental dentro del campo de la Inteligencia Artificial, cuyo propósito es desarrollar modelos capaces de aprender patrones a partir de datos sin ser programados de forma explícita para cada tarea. En este sentido, los algoritmos permititen identificar relaciones complejas dentro de grandes volúmenes de información, facilitando la automatización de procesos de análisis y toma de decisiones \cite{bishop_prml_2006}.
+Los fundamentos del aprendizaje automático se basan en el uso de datos de entrada, modelos matemáticos y procesos de entrenamiento mediante los cuales el sistema ajustará sus parámetros internos con el objetivo de minimizar el error. Este proceso implicará el uso de funciones de pérdida y algoritmos de optimización, así como técnicas de validación para garantizar la capacidad de generalización del modelo frente a datos no vistos previamente \cite{goodfellow_dl_2016_v2}.
 Asimismo, se considerarán aspectos clave como la calidad de los datos, el preprocesamiento, la selección de características y la evaluación del rendimiento mediante métricas específicas, factores que influirán directamente en la eficacia del modelo desarrollado.
 
 \subsubsection{ Aprendizaje supervisado}
-El aprendizaje supervisado representará uno de los enfoques más utilizados dentro del aprendizaje automático, caracterizándose por el uso de datos previamente etiquetados. En este tipo de aprendizaje, el modelo será entrenado a partir de pares de entrada y salida esperada, permitiendo que el sistema aprenda a predecir resultados en función de nuevos datos \cite{bishop_prml_2006}.
+El aprendizaje supervisado representa uno de los enfoques más utilizados dentro del aprendizaje automático, caracterizándose por el uso de datos previamente etiquetados. En este tipo de aprendizaje, el modelo será entrenado a partir de pares de entrada y salida esperada, permitiendo que el sistema aprenda a predecir resultados en función de nuevos datos \cite{bishop_prml_2006}.
 Dentro de este enfoque, se emplearán técnicas de clasificación y regresión. En el contexto del presente estudio, se priorizarán los modelos de clasificación, ya que permitirán determinar la presencia o ausencia de características asociadas al TEA.
 El proceso de entrenamiento incluirá la división del conjunto de datos en subconjuntos de entrenamiento y prueba, así como la validación del modelo mediante métricas como precisión, sensibilidad (recall), especificidad y F1-score. Estas métricas permitirán evaluar la capacidad del sistema para identificar correctamente patrones conductuales relevantes \cite{goodfellow_dl_2016_v2}.
 
@@ -445,11 +445,11 @@ Desde el enfoque metodológico, se enmarca como aplicada y de desarrollo tecnológ
 El análisis se centrará en tres conductas visualmente observables: aleteo de manos, balanceo corporal y movimientos repetitivos de cabeza. Estas conductas serán consideradas como clases de análisis dentro del modelo, sin que ello implique la emisión de un diagnóstico clínico definitivo.
 
 \subsection{Especificaciones de diseño}
-El diseño será experimental, debido a que no se intervendrá sobre pacientes ni se modificarán condiciones clínicas. El análisis se realizará a partir de videos previamente seleccionados y etiquetados, los cuales servirán como fuente de datos para el entrenamiento y evaluación del modelo. Por tanto, con la propuesta no se buscará establecer un diagnóstico clínico definitivo, sino apoyar la identificación preliminar de patrones conductuales que puedan orientar una posterior evaluación profesional.
+ El análisis se realizará a partir de videos previamente seleccionados y etiquetados, los cuales servirán como fuente de datos para el entrenamiento y evaluación del modelo. Por tanto, con la propuesta no se buscará establecer un diagnóstico clínico definitivo, sino apoyar la identificación preliminar de patrones conductuales que puedan orientar una posterior evaluación profesional.
 
-Desde el punto de vista técnico, el diseño contemplará cinco etapas principales: organización del conjunto de videos, preprocesamiento de fotogramas, construcción del modelo CNN-LSTM, evaluación del desempeño e integración del modelo en una plataforma web. En la primera etapa, los videos serán clasificados según la conducta predominante observada. Posteriormente, se extraerán fotogramas, se normalizarán las imágenes y se prepararán las secuencias para su procesamiento computacional.
+Desde el punto de vista técnico, con el diseño contemplará cinco etapas principales: organización del conjunto de videos, preprocesamiento de fotogramas, construcción del modelo CNN-LSTM, evaluación del desempeño e integración del modelo en una plataforma web. En la primera etapa, los videos serán clasificados según la conducta predominante observada. Posteriormente, se extraerán fotogramas, se normalizarán las imágenes y se prepararán las secuencias para su procesamiento computacional.
 
-La arquitectura CNN-LSTM será utilizada porque posibilita combinar el análisis espacial y temporal de los videos. Con la red CNN extraerá características visuales de cada fotograma, como postura, posición de manos, cabeza y cuerpo. Luego, con la red LSTM procesará la secuencia temporal de esas características para identificar patrones repetitivos a lo largo del video.
+Se selecciona la arquitectura CNN-LSTM para ser utilizada porque posibilita combinar el análisis espacial y temporal de los videos. Con la red CNN se extraerá características visuales de cada fotograma, como postura, posición de manos, cabeza y cuerpo. Luego, con la red LSTM se procesará la secuencia temporal de esas características para identificar patrones repetitivos a lo largo del video.
 
 El desempeño del modelo será evaluado mediante métricas cuantitativas de clasificación, tales como precisión, recall y F1-score. 
 \begin{figure}[htbp]
@@ -458,14 +458,14 @@ El desempeño del modelo será evaluado mediante métricas cuantitativas de clasifi
     \caption{Arquitectura funcional para el prototipo web de apoyo a la identificación de patrones conductuales.}
     \label{fig:web_tea}
 \end{figure}
-\textbf{Fuente: Elaboración propia mediante herramientas de inteligencia artificial.}
+
 La Figura 1 ilustra la arquitectura funcional propuesta para el sistema web de apoyo a la identificación de patrones conductuales asociados al Trastorno del Espectro Autista. El flujo inicia en el cliente o frontend, donde el usuario podrá cargar secuencias de video y visualizar el estado del procesamiento y los resultados generados por el sistema.
 Posteriormente, las solicitudes serán enviadas al backend mediante servicios REST. Este componente se encargará de recibir los videos, ejecutar el preprocesamiento necesario y enviar los datos preparados al motor de inferencia. El modelo de inteligencia artificial estará basado en una arquitectura híbrida CNN-LSTM, en la cual la CNN extraerá características espaciales de los fotogramas y la LSTM analizará la secuencia temporal para identificar patrones conductuales repetitivos.
 Los resultados técnicos generados por el modelo serán devueltos al sistema web para su visualización. La plataforma podrá presentar la conducta identificada, el nivel de confianza, y en caso de implementarse, los segmentos temporales donde se detecte el patrón conductual. Asimismo, se considerará el almacenamiento seguro de videos y resultados, atendiendo a criterios de confidencialidad y protección de datos.
 La validación del funcionamiento del sistema será realizada por un profesional vinculado al área del TEA, como un especialista en salud mental, pediatría, neurología infantil, psicología clínica o desarrollo infantil. Esta validación tendrá carácter preliminar y no reemplazará el diagnóstico clínico profesional
 
 \subsection{Lista de tareas}
-Las tareas se organizan en correspondencia con los objetivos específicos del anteproyecto, de modo que cada objetivo cuente con actividades concretas para su cumplimiento. Esta organización permite mantener la trazabilidad entre los objetivos, el desarrollo metodológico y los productos esperados del sistema web basado en arquitectura CNN-LSTM para la identificación de patrones conductuales asociados al TEA. 
+
 
 \textbf{Objetivo 1:} Adquirir conocimiento sobre la tecnología CNN-LSTM aplicada al TEA.
 
@@ -600,7 +600,7 @@ b) Organización y etiquetado del conjunto de datos audiovisuales.
 
 \textbf{Objetivo 3:} Diseñar la arquitectura de un modelo basado en redes neuronales CNN-LSTM.
 &
-a) Definición de la estructura CNN para extracción de características espaciales.
+a) Definición de la estructura CNN para extracción de características.
 &
 &
 &
@@ -642,8 +642,18 @@ b) Normalización y ajuste de imágenes.
 \cellcolor[gray]{0.8} &
 \cellcolor[gray]{0.8} &
 \\
-\hline
+\cline{2-8}
 
+&
+c) Preparación del conjunto de datos para entrenamiento.
+&
+&
+&
+&
+\cellcolor[gray]{0.8} &
+\cellcolor[gray]{0.8} &
+\\
+\hline
 \textbf{Objetivo 5:} Entrenar el modelo utilizando los datos preparados.
 &
 a) Entrenamiento del modelo CNN-LSTM.
@@ -693,9 +703,9 @@ b) Análisis de matriz de confusión.
 \\
 \hline
 
-\textbf{Objetivo 7:} Elaborar plataforma web.
+\textbf{Objetivo 7:} Elaborar plataforma web con las integraciones.
 &
-a) Diseño e implementación de interfaz web.
+a) Elaboración de la interfaz web.
 &
 &
 &
@@ -731,7 +741,7 @@ a) Pruebas funcionales con videos.
 \cline{2-8}
 
 &
-b) Registro y análisis de resultados.
+b) Registro de resultados obetenidos.
 &
 &
 &
@@ -764,9 +774,9 @@ Tecnologías aplicadas al TEA: Escala
 
 \textbf{Estimador:} Tasa de aprendizaje, número de épocas, tamaño de lote, precisión, recall, F1-score y matriz de confusión.
 
-\item \textbf{Forma de evaluación profesional:} Revisión preliminar de los resultados generados por el sistema, realizada por un profesional vinculado al área del TEA, con el propósito de valorar si las conductas identificadas por el modelo son coherentes con las observaciones esperadas.
+\item \textbf{Evaluación del diagnóstico:} Revisión preliminar de los resultados generados por el sistema, realizada por un profesional vinculado al área del TEA, con el propósito de valorar si las conductas identificadas por el modelo son coherentes con las observaciones esperadas.
 
-\textbf{Estimador:} Criterio de evaluación médico.
+\textbf{Estimador:} Criterio clinico aportado por el médico.
 
 \end{itemize}
 
@@ -807,9 +817,9 @@ a) Revisión de conceptos sobre redes neuronales CNN, LSTM y arquitectura CNN-LST
 
 b) Análisis de tecnologías aplicadas al estudio del TEA.
 &
-Tecnología aplicada al TEA.
+Algoritmo de reconocimiento del TEA
 &
-Marco teórico elaborado y cuadro comparativo de tecnologías aplicables al problema.
+Tipo de arquitectura definida, parámetros seleccionados y análisis comparativo documental.
 \\
 \hline
 
@@ -819,9 +829,9 @@ a) Obtención de videos o bases de datos con registros conductuales.
 
 b) Organización y etiquetado del dataset.
 &
-Herramienta de video.
+Aleteo de manos, Balanceo corporal y Movimientos repetitivos de cabeza
 &
-Cantidad de videos seleccionados, duración, formato, calidad visual y clases etiquetadas.
+Presencia o ausencia de cada conducta y cantidad de segmentos etiquetados por conducta.
 \\
 \hline
 
@@ -831,9 +841,9 @@ a) Definición de la estructura CNN para extracción de características espaciales
 
 b) Integración de la capa LSTM para el análisis temporal.
 &
-Algoritmo de reconocimiento del TEA.
+Algoritmo de reconocimiento del TEA
 &
-Arquitectura definida del modelo CNN-LSTM, tasa de aprendizaje, número de épocas y tamaño del lote.
+Arquitectura CNN-LSTM definida, tasa de aprendizaje, número de épocas y tamaño del lote.
 \\
 \hline
 
@@ -841,11 +851,13 @@ Arquitectura definida del modelo CNN-LSTM, tasa de aprendizaje, número de épocas
 &
 a) Extracción de fotogramas desde los videos seleccionados.
 
-b) Normalización y ajuste de imágenes para el entrenamiento.
+b) Normalización y ajuste de imágenes.
+
+c) Preparación del conjunto de datos para entrenamiento.
 &
-Herramienta de video.
+Aleteo de manos, Balanceo corporal y Movimientos repetitivos de cabeza
 &
-Cantidad de fotogramas extraídos, resolución de imágenes y proporción de datos preprocesados.
+Cantidad de fotogramas extraídos por conducta, resolución de imagen y proporción de datos preprocesados.
 \\
 \hline
 
@@ -855,9 +867,9 @@ a) Entrenamiento del modelo CNN-LSTM con el conjunto de datos preparado.
 
 b) Ajuste de hiperparámetros del modelo.
 &
-Algoritmo de reconocimiento del TEA.
+Algoritmo de reconocimiento del TEA
 &
-Registro técnico del entrenamiento y configuración final del modelo.
+Precisión del entrenamiento, pérdida del modelo y configuración final de hiperparámetros.
 \\
 \hline
 
@@ -865,11 +877,11 @@ Registro técnico del entrenamiento y configuración final del modelo.
 &
 a) Cálculo de métricas de desempeño.
 
-b) Análisis de resultados por clase.
+b) Análisis de la matriz de confusión por conducta identificada.
 &
-Aleteo de manos.
+Aleteo de manos
 &
-Valor de precisión, recall y F1-score en la identificación del aleteo de manos.
+Valor de precisión, recall y F1-score para detección de aleteo de manos.
 \\
 \hline
 
@@ -877,11 +889,11 @@ Valor de precisión, recall y F1-score en la identificación del aleteo de manos.
 &
 a) Cálculo de métricas de desempeño.
 
-b) Análisis de resultados por clase.
+b)  Análisis de la matriz de confusión por conducta identificada.
 &
-Balanceo corporal.
+Balanceo corporal
 &
-Valor de precisión, recall y F1-score en la identificación del balanceo corporal.
+Valor de precisión, recall y F1-score para detección de balanceo corporal.
 \\
 \hline
 
@@ -889,23 +901,23 @@ Valor de precisión, recall y F1-score en la identificación del balanceo corporal
 &
 a) Cálculo de métricas de desempeño.
 
-b) Análisis de resultados por clase.
+b)  Análisis de la matriz de confusión por conducta identificada.
 &
-Movimientos repetitivos de cabeza.
+Movimientos repetitivos de cabeza
 &
-Valor de precisión, recall y F1-score en la identificación de movimientos repetitivos de cabeza.
+Valor de precisión, recall y F1-score para detección de movimientos repetitivos de cabeza.
 \\
 \hline
 
 7. Elaborar una plataforma web que integre el modelo.
 &
-a) Diseño e implementación de la interfaz web.
+a) Elaboración de la interfaz web.
 
 b) Integración del modelo CNN-LSTM en la plataforma.
 &
-Tecnología aplicada al TEA.
+Algoritmo de reconocimiento del TEA
 &
-Funcionamiento de la plataforma web e integración operativa del modelo en el sistema.
+Integración funcional del modelo dentro de la plataforma y ejecución correcta del sistema.
 \\
 \hline
 
@@ -915,9 +927,9 @@ a) Pruebas funcionales con videos no utilizados en el entrenamiento.
 
 b) Registro y análisis de resultados.
 &
-Forma de evaluación profesional.
+Evaluación del diagnóstico
 &
-Ficha de validación profesional, observaciones registradas y concordancia con los resultados del sistema.
+Concordancia entre predicción del sistema y evaluación profesional realizada sobre los videos analizados.
 \\
 \hline
 
